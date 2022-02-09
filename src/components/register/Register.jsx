@@ -1,6 +1,8 @@
 import React from 'react';
 import './Register.css';
-import signupLogo from '../images/signupLogo.jpg';
+
+
+
 
 
 function Register(){
@@ -14,9 +16,12 @@ function Register(){
         <div className='container'>
           <div className='row'>
 
+            
+
             <div className='registerLogo clo-md-6 clo-lg-6 col-xl-6 col-sm-6'>
-              <img className='signupLogo w-100' src={signupLogo} alt="logo" />
+              <img className='signupLogo w-100' src={process.env.PUBLIC_URL + '/images/signupLogo.jpg'} alt="logo" />
             </div>
+
               
             <div className='clo-md-6 clo-lg-6 col-xl-6 col-sm-6'>
               <h3 className='mb-3'>Create an Account</h3>

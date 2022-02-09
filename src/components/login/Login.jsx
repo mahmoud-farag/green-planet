@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.css';
 import { useState } from 'react';
-import loginLogo from '../images/loginLogo.png';
+
 
 
 
