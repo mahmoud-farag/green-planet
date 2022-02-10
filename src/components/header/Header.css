@@ -1,0 +1,39 @@
+
+.bg-mylight{
+    background-color: white;
+}
+
+.links{
+    font-weight: bold;
+    cursor: pointer;
+}
+.links:hover{
+    color: #06c9f3;
+}
+
+.loginBtn:hover{
+    color: white !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

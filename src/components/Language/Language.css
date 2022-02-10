@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.mainAddress{
+    background-color: darkgrey;
+    cursor: pointer;
+}
+
+span.ar:after{
+    content: " / ";
+}
