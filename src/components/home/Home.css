@@ -1,0 +1,184 @@
+.home--container {
+ /* background: red; */
+    position: relative;
+    min-height: 100vh;
+    /* padding-bottom: 10rem; */
+}
+.home--container section.top--section{
+    position: relative;
+  
+    /* z-index:-1; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40rem;
+} 
+/* .home--container svg {
+    position:fixed;
+} */
+section.top--section img.trees{
+   
+    position: absolute; 
+    top:0; 
+    left:0;  
+    /* z-index: -10; */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center;
+}
+section.top--section div.title{
+  position: absolute;
+  top:20%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+ 
+section.top--section div.top--section__items{
+    /* background: chartreuse; */
+    top:12rem;
+    position:absolute;
+    top:40%;
+    width:100%;
+    display: felx;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+div.top--section__items ul{
+    display: flex;
+    list-style: none;
+}
+div.top--section__items ul li{
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div.top--section__items ul li p{
+    direction: rtl;
+    text-align-last: center;
+}
+section.top--section  button{
+    position: absolute;
+    bottom:5rem;
+    left:50%;
+    margin-top:20rem;
+    background: blue;
+    color:#fff;
+    cursor: pointer;
+    text-decoration: none;
+    padding: .3rem .7rem;
+    border-radius: 1rem;
+    z-index: 1000;
+}
+
+
+
+/*  start meddile section style */
+.meddille--section {
+    /* background: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom:1rem;
+
+}
+.meddille--section div.title h1{
+    direction: rtl;
+}
+.meddille--section  div.cards--container{
+    /* background: red; */
+    padding:1rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   align-items: center;
+}
+div.cards--container div.card{
+    position:relative;
+    margin:auto;
+    margin-top:1rem;
+    width: 15rem;
+    border-radius: .4rem;
+    overflow: hidden;
+    font-size: 1.3vw;
+    transition: all .3s ease;
+}
+div.cards--container div.card:hover{
+  box-shadow: 10px 10px 14px 0px rgba(0,0,0,0.23);
+}
+div.cards--container div.card figure{
+     
+     
+    /* background:green; */
+}
+div.cards--container div.card div.card--body{
+    /* background: blue; */
+}
+div.card div.card--body h5{
+    border-top: 2px solid green;
+    padding-top:.2rem;
+}
+.meddille--section figure img{
+    /* position:absolute;
+    top:0;
+    left:0;  */
+    width: 100%;
+    height: 10rem;
+    object-fit: fill;
+    transition: all .2s ease;
+}
+.meddille--section figure:hover img{
+    transform: scale(1.04);}
+div.cards--container div.card div.card--body{
+    padding:.5rem;
+    padding-top:0;
+    direction: rtl;
+}
+div.cards--container div.card  button{
+    margin-top:.4rem;
+    transition: all .2s ease ;
+    padding:1rem;
+    font-weight: bold;
+    font-size: 1.1vw;
+}
+
+div.cards--container div.card  button:hover{
+    color:#fff;
+    background: green;
+}
+
+
+/*  end meddile section style */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

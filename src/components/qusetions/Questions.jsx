@@ -4,5 +4,5 @@ import './Questions.css'
 
 
 export default function Questions() {
-  return <div>Questions</div>;
+  return <div></div>;
 }
