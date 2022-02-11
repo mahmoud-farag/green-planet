@@ -6,16 +6,11 @@
 }
 .home--container section.top--section{
     position: relative;
-  
-    /* z-index:-1; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 40rem;
 } 
-/* .home--container svg {
-    position:fixed;
-} */
 section.top--section img.trees{
    
     position: absolute; 
@@ -68,8 +63,7 @@ div.top--section__items ul li p{
 section.top--section  button{
     position: absolute;
     bottom:5rem;
-    left:50%;
-    margin-top:20rem;
+    left:45%;
     background: blue;
     color:#fff;
     cursor: pointer;
@@ -77,6 +71,7 @@ section.top--section  button{
     padding: .3rem .7rem;
     border-radius: 1rem;
     z-index: 1000;
+    padding:.7rem 3rem;
 }
 
 
@@ -116,14 +111,7 @@ div.cards--container div.card{
 div.cards--container div.card:hover{
   box-shadow: 10px 10px 14px 0px rgba(0,0,0,0.23);
 }
-div.cards--container div.card figure{
-     
-     
-    /* background:green; */
-}
-div.cards--container div.card div.card--body{
-    /* background: blue; */
-}
+
 div.card div.card--body h5{
     border-top: 2px solid green;
     padding-top:.2rem;
@@ -164,9 +152,58 @@ div.cards--container div.card  button:hover{
 
 
 
+/* mobile screens   */
+
+@media screen and (max-width:855px) {
+    .home--container section.top--section{
+        height: 65rem;
+    }
+
+    section.top--section div.title{
+        top:5%;
+
+    }
+    section.top--section div.top--section__items{
+        top:15%;
+        
+    }
+    div.top--section__items ul{
+       display: block;
+    }
+    
+    div.top--section__items ul li:first-child{
+        margin-top: 2rem;
+    }
 
 
+    section.top--section button{
+       left:30%;
+    }
 
+
+    /* card styleing */
+    div.cards--container div.card{
+        position: relative;
+        width: 20rem;
+        height:25rem;
+        font-size: 4vw;
+    }
+    div.cards--container div.card h5{
+        font-size: 6vw;
+        font-weight: bold;
+    }
+    div.cards--container div.card  button{
+        position: absolute;
+        bottom:2%;
+        left:0;
+        width:90%;
+        margin:1rem;
+        font-size: 4vw;
+      border-radius:2rem ;
+      color:#fff;
+      background: green;
+    }
+}
 
 
 

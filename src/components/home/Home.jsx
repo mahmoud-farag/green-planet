@@ -42,7 +42,10 @@ export default function Home() {
              </li>            
            </ul>
          </div>
-         <button >ازرع شجرة</button>
+         <div className='btn'>
+          <button >ازرع شجرة</button>
+         </div>
+         
      </section>
     {/*  end top--section */}
     {/*  start meddile--section */}

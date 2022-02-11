@@ -1,0 +1,97 @@
+div.FAQ__container{
+    height:auto;
+}
+
+div.FAQ__container section.top{
+    background: green;
+    color:#fff;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.FAQ__container section.meddile{
+    /* background: yellow; */
+        margin-bottom: 3rem;
+}
+div.FAQ__container section.meddile ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+ 
+    flex-direction: column;
+}
+div.FAQ__container section.meddile ul li{
+    /* background: red; */
+    box-shadow: 7px 7px 44px -12px rgba(0,0,0,0.86);
+    direction: rtl;
+    margin-right: 2rem;
+    margin-top:2rem;
+    padding:1rem;
+    border-radius: 2rem;
+}
+div.FAQ__container section.meddile ul p,
+div.FAQ__container section.meddile ul h2{
+  text-align: start;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

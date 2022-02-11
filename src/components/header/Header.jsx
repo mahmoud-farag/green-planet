@@ -25,15 +25,15 @@ function Header(){
 
             <Nav className='me-auto'>
 
-              <Nav.Link href='#'>
+              <Nav.Link href='/map'>
                 <span className='links'>Tree Map</span>
               </Nav.Link>
 
-              <Nav.Link href='#'>
+              <Nav.Link href='/faq'>
                 <span className='links'>FAQ</span>
               </Nav.Link>
 
-              <Nav.Link href='#'>
+              <Nav.Link href='contact'>
                 <span className='links'>Contact US</span>
               </Nav.Link>
 
@@ -42,7 +42,9 @@ function Header(){
             <div className='m-auto '>
               <button className='rounded-pill text-light fw-bold  btn btn-info p-2'>Plant a tree</button>
 
-              <button className='loginBtn rounded-pill text-info fw-bold  btn btn-outline-info m-2 p-2'>Login / SignUp</button>
+              <Nav.Link href='/login  '>
+                <span className='links'>Login</span>
+              </Nav.Link>
             </div>
 
           </Navbar.Collapse>
@@ -61,31 +63,3 @@ function Header(){
 export default Header;
 
 
-<<<<<<< HEAD
-export default function Header() {
-  return <div className='container header__container'>
-
-    <header>
-        <Link to='/' className='logo' ><span>Green</span> planet </Link>
-        <nav>
-            <ul>
-                <li><Link className='a' to='contact'> تواصل معنا</Link></li>
-                <li><Link className='a' to='faq'> الاسئلة الشائعة</Link></li>
-                <li><Link className='a' to='map'>الخريطة</Link></li>
-            </ul>
-        </nav>
-
-        <section className='registeration'>
-           <Link to='login'>تسجيل دخول</Link>
-           <Link to='#'> ازرع شجرة</Link>
-        </section>
-
-        <section className='languages'>
-             <button>Eng</button>
-             <button>arb</button>
-        </section>
-    </header>
-  </div>;
-}
-=======
->>>>>>> temp
