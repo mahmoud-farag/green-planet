@@ -1,28 +1,35 @@
-
-.bg-mylight{
-    background-color: white;
+header{
+     position:fixed;
+    top:0;
+    left:0;
+    width:100%; 
+    height: 4rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background:#888; */
+    padding:.4rem;
+    z-index: 10; 
 }
 
-.links{
-    font-weight: bold;
-    cursor: pointer;
+header ul {
+    position:relative;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.links:hover{
-    color: #06c9f3;
+header ul li{
+    margin-left:1rem;
 }
-
-.loginBtn:hover{
-    color: white !important;
+header ul li .a,
+header a,
+header .registeration {
+    text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
+header .languages{
+    margin-right: 1rem;
+}
 
 
 

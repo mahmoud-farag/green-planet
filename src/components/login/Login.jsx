@@ -1,20 +1,42 @@
 import React from 'react';
 import './Login.css';
 import { useState } from 'react';
+import axios from 'axios';
+import {useNavigate } from 'react-router-dom';
 
+// import { Link } from 'react-router-dom';
+// import loginLogo from '../images/loginLogo.png';
 
 
 
 
 function Login(){
-
+    const navigate = useNavigate();
     const [toggleState, setToggleState] = useState(1);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState(''); 
 
     const toggleTab = (index) => {
     setToggleState(index);
 
     };
-
+    const handleSubmitting = async (event)=>{
+        event.preventDefault();
+             try {
+               const user = {email, password}
+               const {data}= await axios.post('http://localhost:4000/api/v1/user/login', user) 
+              // if user login successfully ... direct him to the home page
+                if(data)navigate('/')
+               console.log(data)
+            
+             } catch (error) {
+               alert(JSON.stringify(error))
+             }
+            //  clear inputs field
+             setEmail('');
+             setPassword('');
+           
+       }
     return (
 
 <div className='loginMain vh-100 d-flex justify-content-center '>
@@ -31,7 +53,6 @@ function Login(){
             <button  className={toggleState === 1 ? " btn btn-success text-dark tabs active-tabs" : "tabs"}onClick={() => toggleTab(1)}>
                 Mail      
             </button>
-
             <button className={toggleState === 2 ? "btn btn-success text-dark tabs active-tabs" : "tabs"} onClick={() => toggleTab(2)}>
             Phone Number
             </button>
@@ -42,17 +63,29 @@ function Login(){
             <div className={toggleState === 1 ? "content  active-content" : "content"}>
                 <div className='form-group'>
                     <label htmlFor="emailInput" className='fw-bold'>Email</label>
-                    <input id='emailInput' className='form-control w-100' type="email" />
+                    <input 
+                        id='emailInput' 
+                        className='form-control w-100' 
+                        type="email" 
+                        onChange={event=>{setEmail(event.target.value)} }
+
+                    />
 
                     <label htmlFor="passwordInput" className='fw-bold mt-3'>Password</label>
-                    <input id='passwordInput' className='form-control ' type="password" />
+                    <input 
+                        id='passwordInput' 
+                        className='form-control' 
+                        type="password" 
+                        onChange={event=>{setPassword(event.target.value)} }
 
-                    <button className='btn btn-outline-success w-100 mt-3'>Sign In</button>
+                    />
+
+                    <button onClick={handleSubmitting} className='btn btn-outline-success w-100 mt-3'>Sign In</button>
 
                     <div className='forgetPasswordLink mt-5 p-3 w-100'>
                         <a  href="#">Forget Your Password ?</a>
                         <h6 className='mt-4'>Don't have an account?</h6>
-                        <a href="#">Register</a>
+                        <a href="/register">Register</a>
                     </div>
                 </div>
             </div>
@@ -61,7 +94,11 @@ function Login(){
                 
                 <div className='form-group'>
                     <label htmlFor="phoneInput" className='fw-bold'>Phone Number</label>
-                    <input className='form-control' id='phoneInput' type="number" />
+                    <input 
+                        className='form-control' 
+                        id='phoneInput' 
+                        type="number" 
+                    />
 
                     <label htmlFor="passwordPhoneInput" className='fw-bold mt-3'>Password</label>
                     <input id='passwordPhoneInput' className='form-control' type="password" />
@@ -69,7 +106,7 @@ function Login(){
                     <button className='btn btn-outline-success w-100 mt-3'>Sign In</button>
 
                     <div className='forgetPasswordLink mt-5 p-3 w-100'>
-                        <a  href="#">Forget Your Password ?</a>
+                        <a href="#">Forget Your Password ?</a>
                         <h6 className='mt-4'>Don't have an account?</h6>
                         <a href="#">Register</a>
                     </div>
