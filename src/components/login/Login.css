@@ -1,7 +1,7 @@
-
-
 .loginMain{
+    padding-top:7rem;
     background-color:rgb(226, 240, 226);
+    height: 90vh;
 }
 
 
@@ -84,4 +84,11 @@ button {
 }
 .active-content {
     display: block;
+}
+
+@media screen and (max-width:855px) {
+    .loginMain{
+       height: 93vh;
+       padding-top: 15rem;
+    }
 }

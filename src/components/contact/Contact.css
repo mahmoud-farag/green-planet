@@ -3,7 +3,10 @@ div.contactUs__conatiner{
     height: 100vh;
     padding-bottom:2rem;
 }
-
+section.contacts div.title{
+    padding-top:6rem;
+    text-align: end;
+}
 div.contacts__body{
     display: flex;
 }
@@ -31,7 +34,8 @@ div.form__container {
     height: 35rem;
 }
 div.form__container div.form_title{
-    margin-top:2rem
+    margin-top:2rem;
+    text-align:center;
 }
 div.form__container  form  textarea,
 div.form__container  form input{
@@ -49,14 +53,16 @@ div.form__container  form input{
 
 div.form__container  form  button{
     padding:.4rem 2rem;
-    margin:auto;
-    margin-top:2rem;
-    width:50%;
+   margin-top:3rem;
+    width:90%;
     border-radius:1rem;
     color:#fff;
     background: #46C9F3;
 }
+div.form__container  form  button:hover{
+    background: #42b4da;
 
+}
 /* mobile screens styling */
 @media screen and (max-width:855px) {
     div.contactUs__conatiner{
@@ -71,6 +77,21 @@ div.form__container  form  button{
       padding-top:1rem;
       padding-bottom:2rem;
   }
+  div.contactUs__conatiner section.contacts{
+      width:90%
+  }
+  div.form__container{
+     margin-right: 1rem;
+  }
+  div.form__container  form  textarea,
+  div.form__container  form  button,
+  div.form__container  form input{
+    width:100%
+}
+div.form__container  form  textarea:focus,
+div.form__container  form input:focus{
+    border:1px solid #000
+}
 }
 
 

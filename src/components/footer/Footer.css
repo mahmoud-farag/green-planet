@@ -1,48 +1,45 @@
+span.title{
+    color:#FFFAFA;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.container-fluid{
 
+    background: #171717;
+    /* color:#fff; */
+    padding-top:1rem;
+}
+.socialIcons i{
+    padding: 5px;
+    cursor: pointer;
+    
+}
 
-.footer{
-    height: 10rem;
-    background: brown;
+.logo span{
+    padding: 5px;
+}
+
+.links a{
+    text-decoration: none;
+    color:#FFFAFA;
+    font-weight: bold;
+}
+
+.links a:hover{
+    color:#FFFAFA;
+}
+
+div.address p{
+    color:#FFFAFA;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* @media screen and (max-width:855px) {
+    .container-fluid{
+        display: flex;
+        color:red
+    }
+} */
 
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css'
-
+import {  Nav,  } from 'react-bootstrap';
 
 function Footer (){
 
@@ -8,15 +8,17 @@ function Footer (){
 
     <div>
       
-      <div className='container w-75'>
+      <div className='container-fluid'>
 
         <div className='row'>
 
-          <div className='col-md-4 col-lg-4 col-xl-4 col-sm-4'>
+          <div className='col-md-12 col-lg-4 col-xl-4 col-sm-12'>
             <div className='logo'>
 
               <i class="fa-solid fa-tree"></i>
-              <span className='text-success'>Green Planet</span>
+              <Nav.Link  href='/'>
+              <span className='title' >Green Planet</span>
+              </Nav.Link>
               <div className='socialIcons'>
                 <i class="fa-brands fa-facebook"></i>
                 <i class="fa-brands fa-twitter"></i>
@@ -28,7 +30,7 @@ function Footer (){
           
           </div>
 
-          <div className='col-md-4 col-lg-4 col-xl-4 col-sm-4'>
+          <div className='col-md-12 col-lg-4 col-xl-4 col-sm-12'>
             
             <div className='links'>
               <a href="#">Privacy & Policy</a>
@@ -44,7 +46,7 @@ function Footer (){
 
           </div>
 
-          <div className='col-md-4 col-lg-4 col-xl-4 col-sm-4'>
+          <div className='col-md-12 col-lg-4 col-xl-4 col-sm-12'>
 
             <div className='links'>
               <a href="#">+96 650 688 31 84</a>

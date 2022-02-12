@@ -12,8 +12,8 @@ export default function Home() {
      <section className="top--section">
          <img  className='trees'src={process.env.PUBLIC_URL + '/imgs/trees.png'} ></img>
          <div className="title">
-         <h1> كيف تزرع شجرة من خلال منصة نباتك</h1>
-         <p>ترك تأثير بيئي إيجابي أصبح أسهل من أي وقت مضى</p>
+            <h1> كيف تزرع شجرة من خلال منصة نباتك</h1>
+            <p>ترك تأثير بيئي إيجابي أصبح أسهل من أي وقت مضى</p>
          </div>
          <div className='top--section__items'>
            <ul>
@@ -59,9 +59,9 @@ export default function Home() {
                {/* start  card*/}
               <div className="card">
                <figure>
-                  <a href='#'>
+                  <Link to='#'>
                     <img src={process.env.PUBLIC_URL + '/imgs/1.jpg'}></img>
-                  </a>
+                  </Link>
                 </figure>
                 <div className="card--body">
                   <h5>عدد الأشجار التي زُرعت66 / 35</h5>
@@ -74,9 +74,9 @@ export default function Home() {
                {/* start  card*/}
                <div className="card">
                <figure>
-                  <a href='#'>
+                  <Link to='#'>
                     <img src={process.env.PUBLIC_URL + '/imgs/2.jpeg'}></img>
-                  </a>
+                  </Link>
                 </figure>
                 <div className="card--body">
                   <h5>عدد الأشجار التي زُرعت66 / 35</h5>
@@ -88,9 +88,9 @@ export default function Home() {
               {/* start  card*/}
               <div className="card">
                <figure>
-                  <a href='#'>
+                  <Link to='#'>
                     <img src={process.env.PUBLIC_URL + '/imgs/2.jpeg'}></img>
-                  </a>
+                  </Link>
                 </figure>
                 <div className="card--body">
                   <h5>عدد الأشجار التي زُرعت66 / 35</h5>
@@ -102,9 +102,9 @@ export default function Home() {
               {/* start  card*/}
               <div className="card">
                <figure>
-                  <a href='/1'>
+                  <Link to='/1'>
                     <img src={process.env.PUBLIC_URL + '/imgs/2.jpeg'}></img>
-                  </a>
+                  </Link>
                 </figure>
                 <div className="card--body">
                   <h5>عدد الأشجار التي زُرعت66 / 35</h5>
@@ -113,9 +113,6 @@ export default function Home() {
                 <button >ازرع شجرة</button>
               </div>
               {/* end  card*/}
-              
-              
-
             </div>
           {/* start  cards--container */}
 

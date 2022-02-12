@@ -23,6 +23,7 @@ section.top--section img.trees{
     object-position: center;
 }
 section.top--section div.title{
+text-align: center;
   position: absolute;
   top:20%;
   width:100%;
@@ -64,7 +65,7 @@ section.top--section  button{
     position: absolute;
     bottom:5rem;
     left:45%;
-    background: blue;
+    background: #46C9F3;
     color:#fff;
     cursor: pointer;
     text-decoration: none;
@@ -74,7 +75,9 @@ section.top--section  button{
     padding:.7rem 3rem;
 }
 
-
+section.top--section  button:hover{
+    background: #42b4da;
+}
 
 /*  start meddile section style */
 .meddille--section {
@@ -85,6 +88,10 @@ section.top--section  button{
     flex-direction: column;
     padding-bottom:1rem;
 
+}
+.meddille--section div.title {
+    padding:1rem;
+    text-align: center;
 }
 .meddille--section div.title h1{
     direction: rtl;
@@ -135,6 +142,8 @@ div.cards--container div.card div.card--body{
 div.cards--container div.card  button{
     margin-top:.4rem;
     transition: all .2s ease ;
+    background: #46C9F3;
+    color:#fff;
     padding:1rem;
     font-weight: bold;
     font-size: 1.1vw;
@@ -179,7 +188,13 @@ div.cards--container div.card  button:hover{
     section.top--section button{
        left:30%;
     }
-
+    section.top--section div.title h1{
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    section.top--section div.title{
+        top:7%;
+    }
 
     /* card styleing */
     div.cards--container div.card{

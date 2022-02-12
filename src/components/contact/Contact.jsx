@@ -37,7 +37,7 @@ export default function Contact() {
               <input type='text' name='name' placeholder='ادخل اسمك هنا'></input>
               <input type='emai' name='email' placeholder='البريد الالكتروني'></input>
               <textarea placeholder='محتوى رسالتك'></textarea>
-              <button type='submeit'> ارسال</button>
+              <button type='submet'> ارسال</button>
             </form>
           </div>
           
