@@ -3,6 +3,7 @@ import './Login.css';
 import { useState } from 'react';
 import axios from 'axios';
 import {Link, useNavigate } from 'react-router-dom';
+import validator from 'validator'
 
 // import { Link } from 'react-router-dom';
 // import loginLogo from '../images/loginLogo.png';
@@ -18,22 +19,29 @@ function Login(){
 
     };
     const handleSubmitting = async (event)=>{
-        event.preventDefault();
-             try {
-               const user = {email, password}
-               const {data}= await axios.post('https://green-planet12.herokuapp.com/api/v1/user/login', user) 
-              // if user login successfully ... direct him to the home page
-                if(data)navigate('/')
-               console.log(data)
+        // event.preventDefault();
+        if(!validator.isEmail(email))
+            { return alert('Enter valid email')}
+        else if(password.length==0 || password.length <8)
+            {return alert('enter valid passowrd and must be more than 8 ')}
+        else{
+            try {
+                const user = {email, password}
+                const {data}= await axios.post('https://green-planet12.herokuapp.com/api/v1/user/login', user) 
+               // if user login successfully ... direct him to the home page
+                 if(data)navigate('/')
+                console.log(data)
+             
+              } catch (error) {
+                  console.log(error.response.data)
+                alert(JSON.stringify(error.response.data))
+              }
+             //  clear inputs field
+              setEmail('');
+              setPassword('');
             
-             } catch (error) {
-                 console.log(error.response.data)
-               alert(JSON.stringify(error.response.data))
-             }
-            //  clear inputs field
-             setEmail('');
-             setPassword('');
-           
+        }
+             
        }
     return(
         <div className='loginMain'>

@@ -1,5 +1,8 @@
 import axios from 'axios';
 import React ,{useState} from 'react';
+import validator from 'validator'
+
+
 import './Register.css';
 import {useNavigate } from 'react-router-dom';
 // import signupLogo from '../images/signupLogo.jpg';
@@ -15,31 +18,43 @@ function Register(){
       
            
     const handleSubmitting = async (event)=>{
-     event.preventDefault();
-        if(password != confirmPassword) alert('password not matched with confirm password plz enter valid password');
+    //  event.preventDefault();
+
+        if(!name)
+          { return alert('you have to provide a userName')}
+        else if(!validator.isEmail(email))
+          {return alert('plz Enter valid email')}
+        else if(password.length < 8)
+          {return alert('the password must be more than 8')}
+        else if(password !== confirmPassword)
+          {return alert('password not matched with confirm password plz enter valid password')}
         else{
+          console.log('else clause')
             //  create user account into db 
-          try {
-            const user= {
-              name,
-              email,
-              password
-            }  
-            const {data}= await axios.post('https://green-planet12.herokuapp.com/api/v1/user/register', user) 
-            // if user regsiter successfully ... direct him to the home page
-            if(data)navigate('/')
-            console.log(data)
-            // alert(JSON.stringify(data))
-         
-          } catch (error) {
-            alert(JSON.stringify(error))
-          }
+            try {
+              const user= {
+                name,
+                email,
+                password
+              }  
+              const {data}= await axios.post('https://green-planet12.herokuapp.com/api/v1/user/register', user) 
+              // if user regsiter successfully ... direct him to the home page
+              if(data)navigate('/')
+              console.log(data)
+               // alert(JSON.stringify(data))
+           
+             } catch (error) {
+              alert(JSON.stringify(error))
+            }
+         }
+          
+       
           // clear inputs field
           setName('');
           setEmail('');
           setPassword('');
           setConfirmPassword('');
-        }
+    
     }
   
   return(
