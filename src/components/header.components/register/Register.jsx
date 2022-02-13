@@ -1,6 +1,5 @@
 import axios from 'axios';
-import React from 'react';
-import { useState } from 'react/cjs/react.development';
+import React ,{useState} from 'react';
 import './Register.css';
 import {useNavigate } from 'react-router-dom';
 // import signupLogo from '../images/signupLogo.jpg';
