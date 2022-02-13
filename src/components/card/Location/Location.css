@@ -1,23 +1,60 @@
 
 div.uploadCard__container{
-    width:50%;
+    min-width:50%;
     margin:auto;
-    height: 90vh;
+   
+    min-height: 90vh;
     padding-top:4rem;
+}
+div.form__container{
+    /* background:red; */
+}
+div.form__container .title{
+    text-align:center
+
+}
+div.form__container form{
+    /* background: yellow; */
+    max-width:60%;
+    padding:1rem;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: cenetr;
+}
+div.form__container form div{
+    /* background: green; */
+    min-width: 50%
+}
+div.form__container form  label{
+    display:block;
+    text-align: end;
+    margin-top:1rem;
+    margin-right: 1rem;
+/* background: red; */
+}
+div.form__container form input
+{
+  
+    width:100%
 }
 input[type='file']{
     cursor: pointer;
 }
-label{
-    display:block;
-    text-align: end;
-    margin-right: 4rem;
-    margin-top:1rem;
+div.form__container form button{
+    min-width:60%;
+    margin:auto;
+    margin-top:2rem;
 }
 
 
 
-
+@media screen and (max-width:855px) {
+    div.form__container form{
+        min-width:90%;
+    }
+}
 
 
 

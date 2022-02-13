@@ -5,7 +5,7 @@ import Footer from './components/footer/Footer';
 import Header from './components/header.components/header/Header';
 import Home from './components/home/Home.jsx';
 import Login from './components/header.components/login/Login';
-import Map from './components/header.components/map/Map';
+import MapContainer from './components/header.components/map/MapContainer';
 import Payment from './components/payment/Payment';
 import Questions from './components/header.components/qusetions/Questions';
 import Register from './components/header.components/register/Register';
@@ -19,7 +19,7 @@ function App() {
          <Route path='/' element={<Home/>}/>
          <Route path='/contact' element={<Contact/>}/>
          <Route path='/faq' element={<Questions/>}/>
-         <Route path='/map' element={<Map/>}/>
+         <Route path='/map' element={<MapContainer/>}/>
          <Route path='/payment' element={<Payment/>}/>
          <Route path='/login' element={<Login/>}/>
          <Route path='/register' element={<Register/>}/>
