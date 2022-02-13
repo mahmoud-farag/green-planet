@@ -26,7 +26,7 @@ function Register(){
               email,
               password
             }  
-            const {data}= await axios.post('http://localhost:4000/api/v1/user/register', user) 
+            const {data}= await axios.post('https://green-planet12.herokuapp.com/api/v1/user/register', user) 
             // if user regsiter successfully ... direct him to the home page
             if(data)navigate('/')
             console.log(data)
@@ -49,11 +49,11 @@ function Register(){
 
       <div className='registerContent bg-light w-75 h-75 rounded clo-md-6 clo-lg-6 col-xl-6 col-sm-6'>
 
-        <div className='container'>
+        <div className='container register__container'>
           <div className='row'>
 
             <div className='registerLogo clo-md-6 clo-lg-6 col-xl-6 col-sm-6'>
-              <img className='signupLogo w-100'  alt="logo" />
+              {/* <img className='signupLogo w-100'  alt="logo" /> */}
             </div>
               
             <div className='clo-md-6 clo-lg-6 col-xl-6 col-sm-6'>

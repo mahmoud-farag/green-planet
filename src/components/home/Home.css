@@ -120,8 +120,11 @@ div.cards--container div.card:hover{
 }
 
 div.card div.card--body h5{
-    border-top: 2px solid green;
-    padding-top:.2rem;
+    border-bottom: 2px solid #0f700f;
+    padding-bottom:.2rem;
+}
+div.card div.card--body p{
+    font-size: 1rem;
 }
 .meddille--section figure img{
     /* position:absolute;

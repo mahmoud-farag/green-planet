@@ -1,22 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Contact from './components/contact/Contact';
+import Contact from './components/header.components/contact/Contact';
 import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
+import Header from './components/header.components/header/Header';
 import Home from './components/home/Home.jsx';
-import Login from './components/login/Login';
-import Map from './components/map/Map';
+import Login from './components/header.components/login/Login';
+import Map from './components/header.components/map/Map';
 import Payment from './components/payment/Payment';
-import Questions from './components/qusetions/Questions';
-import Register from './components/register/Register';
-
-
-
-// import "../node_modules/bootstrap/dist/css/bootstrap.css";
-
-
-
-
+import Questions from './components/header.components/qusetions/Questions';
+import Register from './components/header.components/register/Register';
+import Location from './components/card/Location/Location';
 
 function App() {
   return (
@@ -30,6 +23,7 @@ function App() {
          <Route path='/payment' element={<Payment/>}/>
          <Route path='/login' element={<Login/>}/>
          <Route path='/register' element={<Register/>}/>
+         <Route path='/location' element={<Location/>}/>
 
        </Routes>
    

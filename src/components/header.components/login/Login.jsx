@@ -21,13 +21,14 @@ function Login(){
         event.preventDefault();
              try {
                const user = {email, password}
-               const {data}= await axios.post('http://localhost:4000/api/v1/user/login', user) 
+               const {data}= await axios.post('https://green-planet12.herokuapp.com/api/v1/user/login', user) 
               // if user login successfully ... direct him to the home page
                 if(data)navigate('/')
                console.log(data)
             
              } catch (error) {
-               alert(JSON.stringify(error))
+                 console.log(error.response.data)
+               alert(JSON.stringify(error.response.data))
              }
             //  clear inputs field
              setEmail('');
@@ -65,7 +66,7 @@ function Login(){
                                         type="password" 
                                         onChange={event=>{setPassword(event.target.value)} }
                                         />
-                                    <button className='btn btn-outline-success w-100 mt-3'>Sign In</button>
+                                    <button onClick={handleSubmitting}  className='btn btn-outline-success w-100 mt-3'>Sign In</button>
                                     <div className='forgetPasswordLink mt-5 p-3 w-100'>
                                         <Link to="#">Forget Your Password ?</Link>
                                         <h6 className='mt-4'>Don't have an account?</h6>

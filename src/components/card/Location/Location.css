@@ -1,0 +1,32 @@
+
+div.uploadCard__container{
+    width:50%;
+    margin:auto;
+    height: 90vh;
+    padding-top:4rem;
+}
+input[type='file']{
+    cursor: pointer;
+}
+label{
+    display:block;
+    text-align: end;
+    margin-right: 4rem;
+    margin-top:1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
