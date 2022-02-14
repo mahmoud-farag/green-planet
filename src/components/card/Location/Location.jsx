@@ -20,8 +20,8 @@ export default function Location() {
           location.append('treePrice',treePrice);
           location.append('img',img);
      
-      // const {data} = await axios.post('https://green-planet12.herokuapp.com/api/v1/location',location)
-      const {data} = await axios.post('http://localhost:4000/api/v1/location',location)
+      const {data} = await axios.post('https://green-planet12.herokuapp.com/api/v1/location',location)
+      // const {data} = await axios.post('http://localhost:4000/api/v1/location',location)
       
          if (data) navigate('/')
     } catch (error) {
