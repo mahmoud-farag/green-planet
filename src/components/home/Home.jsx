@@ -87,7 +87,7 @@ export default function Home() {
                 locations.length>0 ? locations.map(location=>(
                   <div  key={location._id}className="card">
                     <figure>
-                      <Link to={location._id}>
+                      <Link to={`/location/${location._id}`}>
                         <img 
                           src={`data:image/jpeg;base64,
                           ${Buffer.from(location.img.binaryImg.data,'binary').toString('base64')}`}>
@@ -100,7 +100,7 @@ export default function Home() {
                     <p>{location.title}</p>
                     <p><span>{location.treePrice} ريال</span> / شجرة</p>
                   </div>
-                  <button className='anchor'><Link  style={{ textDecoration: 'none', color:'#fff'}} to={location._id}>ازرع شجرة</Link></button>
+                  <button><Link  style={{ textDecoration: 'none', color:'#fff'}} to={`/location/${location._id}`}>ازرع شجرة</Link></button>
                 </div> 
                 // end card
                ))
