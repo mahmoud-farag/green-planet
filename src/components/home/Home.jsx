@@ -2,23 +2,29 @@ import React ,{useEffect, useState}from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css'
 import axios from 'axios';
+import {Buffer} from 'buffer';
 
 
 export default function Home() {
-  const [location, setLocations] = useState([]);
-   
+  const [locations, setLocations] = useState([]);
+   const [error, setError] =useState('')
    const  getLocations = async()=>{
       try {
         const {data}= await axios.get('http://localhost:4000/api/v1/location');
-        console.log(data)
+        if(data){
+          console.log(data.locations)
+         setLocations(data.locations)
+          //  console.log(Buffer.from(data.locations[0].img.binaryImg.data, 'binary').toString('base64'))
+        }
       } catch (error) {
-        console.log(error)
+         setError(error.message)
+        console.log(error.message)
       }
     }
     
   useEffect(()=>{
     getLocations();
-  },[getLocations])
+  },[])
 
 
   return <div className='home--container'>
@@ -75,74 +81,38 @@ export default function Home() {
             {/* start  cards--container */}
             <div className="cards--container">
                {/* start  card*/}
-              <div className="card">
-               <figure>
-                  <Link to='#'>
-                    <img src={process.env.PUBLIC_URL + '/imgs/1.jpg'}></img>
-                  </Link>
-                </figure>
-                <div className="card--body">
-                  <h5>عدد الأشجار التي زُرعت66 / 35</h5>
-                  <p>جامعة الامام عبدالرحمن بن فيصلالدمام, السعودية</p>
-                  <p><span>40 ريال</span> / شجرة</p>
-                </div>
-                <button >ازرع شجرة</button>
-              </div>
-              {/* end  card*/}
-        
-               {/* start  card*/}
-               <div className="card">
-               <figure>
-                  <Link to='#'>
-                    <img src={process.env.PUBLIC_URL + '/imgs/2.jpeg'}></img>
-                  </Link>
-                </figure>
-                <div className="card--body">
-                  <h5>عدد الأشجار التي زُرعت66 / 35</h5>
-                  <p>جامعة الامام عبدالرحمن بن فيصلالدمام, السعودية</p>
-                  <p><span>40 ريال</span> / شجرة</p>
-                </div>
-                <button >ازرع شجرة</button>
-              </div>
-              {/* end  card*/}
-              {/* start  card*/}
-              <div className="card">
-               <figure>
-                  <Link to='#'>
-                    <img src={process.env.PUBLIC_URL + '/imgs/2.jpeg'}></img>
-                  </Link>
-                </figure>
-                <div className="card--body">
-                  <h5>عدد الأشجار التي زُرعت66 / 35</h5>
-                  <p>جامعة الامام عبدالرحمن بن فيصلالدمام, السعودية</p>    
-                  <p><span>40 ريال</span> / شجرة</p>
-                </div>
-                <button >ازرع شجرة</button>
-              </div>
-              {/* end  card*/}
-              {/* start  card*/}
-              <div className="card">
-               <figure>
-                  <Link to='/1'>
-                    <img src={process.env.PUBLIC_URL + '/imgs/2.jpeg'}></img>
-                  </Link>
-                </figure>
-                <div className="card--body">
-                  <h5>عدد الأشجار التي زُرعت66 / 35</h5>
-                  <p>جامعة الامام عبدالرحمن بن فيصلالدمام, السعودية</p>
-                  <p><span>40 ريال</span> / شجرة</p>
-                </div>
-                <button >ازرع شجرة</button>
-              </div>
-              {/* end  card*/}
+               {
+                error? <h1>netwrok error ...try again</h1>
+                :
+                locations.length>0 ? locations.map(location=>(
+                  <div  key={location._id}className="card">
+                    <figure>
+                      <Link to={location._id}>
+                        <img 
+                          src={`data:image/jpeg;base64,
+                          ${Buffer.from(location.img.binaryImg.data,'binary').toString('base64')}`}>
+                          
+                          </img>
+                      </Link>
+                    </figure>
+                  <div className="card--body">
+                    <h5>الأشجار التي زُرعت{location.maxTrees} / {location.totalPlantedTrees}</h5>
+                    <p>{location.title}</p>
+                    <p><span>{location.treePrice} ريال</span> / شجرة</p>
+                  </div>
+                  <button className='anchor'><Link  style={{ textDecoration: 'none', color:'#fff'}} to={location._id}>ازرع شجرة</Link></button>
+                </div> 
+                // end card
+               ))
+               :
+                 <h1>Loading...</h1>}
+              
+             
+      
             </div>
           {/* start  cards--container */}
 
     </section>
     {/*  end meddile--section */}
-
-    
-      
-
   </div>;
 }

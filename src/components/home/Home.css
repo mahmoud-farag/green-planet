@@ -109,8 +109,9 @@ div.cards--container div.card{
     position:relative;
     margin:auto;
     margin-top:1rem;
-    width: 15rem;
+    width: 18rem;
     border-radius: .4rem;
+    min-height: 20rem;
     overflow: hidden;
     font-size: 1.3vw;
     transition: all .3s ease;
