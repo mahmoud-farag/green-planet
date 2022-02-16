@@ -37,59 +37,49 @@ export default function LocationDetails() {
       <div className="row m-2">
 
           <div className='col-md-6 col-sm-12 col-lg-4 col-xl-4'>
-              <img className='w-100' src={process.env.PUBLIC_URL+'/imgs/2.jpeg'} alt="" />
+              <img className='w-100' src={process.env.PUBLIC_URL+'/imgs/Neem.jpeg'} alt="" />
               <div className='tree-details'>
-                  <h6>Lorem, ipsum.</h6>
-                  <h6>20LE</h6>
+                  <h6>شجرة النيم</h6>
+                  <h6>45﷼</h6>
                   <button className='btn btn-info text-light rounded-pill fs-5'>More Details</button>
               </div>
           </div>
 
           <div className='col-md-6 col-sm-12 col-lg-4 col-xl-4'>
-              <img className='w-100' src={process.env.PUBLIC_URL+'/imgs/2.jpeg'} alt="" />
+              <img className='w-100' src={process.env.PUBLIC_URL+'/imgs/fekass.jpeg'} alt="" />
               <div className='tree-details'>
-                  <h6>Lorem, ipsum.</h6>
-                  <h6>20LE</h6>
+                  <h6>فيكس لسان العصفور</h6>
+                  <h6>50﷼</h6>
                   <button className='btn btn-info text-light rounded-pill fs-5'>More Details</button>
               </div>
           </div>
 
           <div className='col-md-6 col-sm-12 col-lg-4 col-xl-4'>
-              <img className='w-100' src={process.env.PUBLIC_URL+'/imgs/2.jpeg'} alt="" />
+              <img className='w-100' src={process.env.PUBLIC_URL+'/imgs/bonsiana.jpeg'} alt="" />
               <div className='tree-details'>
-                  <h6>Lorem, ipsum.</h6>
-                  <h6>20LE</h6>
+                  <h6>البونسيانا</h6>
+                  <h6>55﷼</h6>
                   <button className='btn btn-info text-light rounded-pill fs-5'>More Details</button>
               </div>
           </div>
 
           <div className='col-md-6 col-sm-12 col-lg-4 col-xl-4'>
-              <img className='w-100' src={process.env.PUBLIC_URL+'/imgs/2.jpeg'} alt="" />
+              <img className='w-100' src={process.env.PUBLIC_URL+'/imgs/elab5.jpg'} alt="" />
               <div className='tree-details'>
-                  <h6>Lorem, ipsum.</h6>
-                  <h6>20LE</h6>
+                  <h6>شجرة اللبخ</h6>
+                  <h6>45﷼</h6>
                   <button className='btn btn-info text-light rounded-pill fs-5'>More Details</button>
               </div>
           </div>
 
           <div className='col-md-6 col-sm-12 col-lg-4 col-xl-4'>
-              <img className='w-100' src={process.env.PUBLIC_URL+'/imgs/2.jpeg'} alt="" />
+              <img className='w-100' src={process.env.PUBLIC_URL+'/imgs/akasia.jpeg'} alt="" />
               <div className='tree-details'>
-                  <h6>Lorem, ipsum.</h6>
-                  <h6>20LE</h6>
+                  <h6>أكاسيا جلوكا.</h6>
+                  <h6>45﷼</h6>
                   <button className='btn btn-info text-light rounded-pill fs-5'>More Details</button>
               </div>
           </div>
-
-          <div className='col-md-6 col-sm-12 col-lg-4 col-xl-4'>
-              <img className='w-100' src={process.env.PUBLIC_URL+'/imgs/2.jpeg'} alt="" />
-              <div className='tree-details'>
-                  <h6>Lorem, ipsum.</h6>
-                  <h6>20LE</h6>
-                  <button className='btn btn-info text-light rounded-pill fs-5'>More Details</button>
-              </div>
-          </div>
-
       </div>
   </div>
 
