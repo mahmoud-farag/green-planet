@@ -22,11 +22,11 @@ export default function Location() {
      
       const {data} = await axios.post('https://green-planet12.herokuapp.com/api/v1/location',location)
       // const {data} = await axios.post('http://localhost:4000/api/v1/location',location)
-      
+        
          if (data) navigate('/')
     } catch (error) {
        console.log('error')
-       console.log(error)
+       console.log(error.message)
     } 
   }
   return (
