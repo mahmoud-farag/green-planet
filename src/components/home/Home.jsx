@@ -10,8 +10,8 @@ export default function Home() {
    const [error, setError] =useState('')
    const  getLocations = async()=>{
       try {
-       const {data} = await axios.get(`https://green-planet12.herokuapp.com/api/v1/location`);
-        // const {data}= await axios.get('http://localhost:4000/api/v1/location');
+      //  const {data} = await axios.get(`https://green-planet12.herokuapp.com/api/v1/location`);
+        const {data}= await axios.get('http://localhost:4000/api/v1/location');
         if(data){
           console.log(data.locations)
          setLocations(data.locations)

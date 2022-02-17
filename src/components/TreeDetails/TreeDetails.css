@@ -1,0 +1,20 @@
+.line{
+
+    border: 1px solid lightgray;
+    
+}
+
+.small-img{
+
+    cursor: pointer;
+}
+
+.small-img:hover{
+
+    border: 1px solid rgb(76, 240, 240);
+}
+
+.location-btn:hover{
+
+    color: white !important;
+}

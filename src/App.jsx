@@ -12,6 +12,7 @@ import Register from './components/header.components/register/Register';
 import Location from './components/card/Location/Location';
 import LocationDetails from './components/card/locationDetails/LocationDetails';
 import About from './components/header.components/about/About';
+import TreeDetails from './components/TreeDetails/TreeDetails.jsx';
 
 function App() {
   return (
@@ -27,9 +28,8 @@ function App() {
          <Route path='/register' element={<Register/>}/>
          <Route path='/location' element={<Location/>}/>
          <Route path='/location/:id' element={<LocationDetails/>}/>
-       </Routes>
-   
-          
+         <Route path='/tree/:id'  element={<TreeDetails/>} />
+       </Routes>       
       <Footer/>
     </div>
   );

@@ -12,4 +12,6 @@
 overflow-x: hidden;
 }
 
-
+.container{
+    padding-top:6rem;
+}
