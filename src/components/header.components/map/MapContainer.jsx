@@ -5,32 +5,41 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 export class MapContainer extends Component {
   render() {
-    return (
-        <div className='container map_container'>
 
-          <div className='row'>
+    return(
 
-            <div className='col-md-12 col-sm-12 col-lg-12 col-xl-12'>
+      <div className='vh-100'>
 
-            <Map google={this.props.google} zoom={10}>
- 
-              <Marker onClick={this.onMarkerClick}
-                      name={'Current location'} />
+        <div className="container">
 
-              <InfoWindow onClose={this.onInfoWindowClose}>
-                  
-              </InfoWindow>
-            </Map>
+          <div className='col-lg-6 col-xl-6 col-sm-6 col-md-6'>
+
+            <div className="map w-75">
+
+              <Map className='w-75' google={this.props.google} zoom={10}>
+      
+                <Marker onClick={this.onMarkerClick}
+                        name={'Current location'} />
+
+                <InfoWindow onClose={this.onInfoWindowClose}>
+                    
+                </InfoWindow>
+              </Map>
 
             </div>
 
           </div>
 
         </div>
-        
-      
+
+      </div>
+
     );
+
+
   }
+
+
 }
  
 export default GoogleApiWrapper({

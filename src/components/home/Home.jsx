@@ -68,13 +68,13 @@ export default function Home() {
            </ul>
          </div>
          <div className='btn'>
-          <button >ازرع شجرة</button>
+          <button ><Link style={{ textDecoration: 'none', color:'#fff'}} to='#meddile'>ازرع شجرة</Link></button>
          </div>
          
      </section>
     {/*  end top--section */}
     {/*  start meddile--section */}
-    <section className="meddille--section">
+    <section className="meddille--section" id='meddile'>
             <div className='title'>
               <h1>أين تريد زراعة الأشجار؟</h1>
               <p>جميع المواقع تم اختيارها لجاهزيتها للزراعة ووجود شبكة ري وتربة صالحة</p>

@@ -1,12 +1,9 @@
-.stripe--container{
-  margin-top:10rem;
+.stripe--container {
+    /* margin-top:10rem; */
 }
 
-
-.stripe-btn{
-    background-color: red;
-    color:yellow
+.stripe-btn {
+    color: #fff;
+    background: red;
+    padding: .4rem 1rem
 }
-
-
-
