@@ -13,7 +13,9 @@ function Login(){
     const [toggleState, setToggleState] = useState(1);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState(''); 
-
+    const [emailFocused, setEmailFocused] = useState(false);  
+    const [passwordFocused, setPasswordFocused] = useState(false);  
+    const [login,setlogin] = useState(false)
     const toggleTab = (index) => {
     setToggleState(index);
 
@@ -27,26 +29,27 @@ function Login(){
         else{
             try {
                 const user = {email, password}
+                setlogin(true);
                 const {data}= await axios.post('https://green-planet12.herokuapp.com/api/v1/user/login', user) 
                // if user login successfully ... direct him to the home page
                  if(data)navigate('/')
                 console.log(data)
-             
+                //  clear inputs field
+                setEmail('');
+                setPassword('');
+           
               } catch (error) {
                   console.log(error.response.data)
                 alert(JSON.stringify(error.response.data))
               }
-             //  clear inputs field
-              setEmail('');
-              setPassword('');
-            
+             
         }
              
        }
     return(
         <div className='loginMain'>
-            <div className=' title bg-light shadow p-1 bg-body rounded text-center m-auto w-50 rounded-pill '>
-                <h4>Signing In</h4>
+            <div className=' title bg-light shadow p-1 bg-body rounded text-center w-50 m-auto   rounded-pill '>
+                <h4>تسجيل الدخول</h4>
             </div>
             <div className='container'>
                 <div className='row d-flex justify-content-center'>
@@ -60,25 +63,38 @@ function Login(){
                         <div className="content-tabs ">
                             <div className={toggleState === 1 ? "content  active-content" :   "content"}>
                                 <div className='form-group'>
-                                    <label htmlFor="emailInput" className='fw-bold'>Email</label>
+                                  <div className='email'>
+                                    <label htmlFor="emailInput" className='fw-bold'>الايميل</label>
                                     <input 
                                         id='emailInput' 
                                         className='form-control w-100' 
                                         type="email" 
+                                        required
+                                        onBlur={(e)=>setEmailFocused(true)}
+                                        focused={emailFocused.toString()}
                                         onChange={event=>{setEmail(event.target.value)} }
-                                        />
-                                    <label htmlFor="passwordInput" className='fw-bold mt-3'>Password</label>
+                                    />
+                                    <span>هذا الايمل ليس صحيح!</span>
+
+                                  </div>
+                                  <div className='password'>
+                                    <label l htmlFor="passwordInput" className='fw-bold mt-3'>كلمة المرور</label>
                                     <input 
                                         id='passwordInput' 
                                         className='form-control ' 
                                         type="password" 
+                                        required
+                                        onFocus={(e)=>setPasswordFocused(true)}
+                                        focused={passwordFocused.toString()}
                                         onChange={event=>{setPassword(event.target.value)} }
-                                        />
-                                    <button onClick={handleSubmitting}  className='btn btn-outline-success w-100 mt-3'>Sign In</button>
+                                    />
+                                    <span>كلمة المرور لابد ان تكون مكونه من 8-16 عنصر يحتوى على الاقل 1 حرف, 1رقم, 1 حرف خاص </span>
+                                   </div>
+                                    <button onClick={handleSubmitting}  className='btn btn-outline-success w-100 mt-3'>{login? 'جاري تسجيل الدخول...':'تسجيل دخول'}</button>
                                     <div className='forgetPasswordLink mt-5 p-3 w-100'>
-                                        <Link to="#">Forget Your Password ?</Link>
-                                        <h6 className='mt-4'>Don't have an account?</h6>
-                                        <Link to="/register">Register</Link>
+                                    <p className='text-end'><Link className='text-end' to="#">هل نسيت كلمة السر ?</Link></p>
+                                        <h6 className='mt-4 text-end'>لا تمتلك حساب?</h6>
+                                        <p className='text-end'><Link to="/register">أنشئ حساب</Link></p>
                                     </div>
                                     </div>
                                     </div>

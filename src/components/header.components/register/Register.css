@@ -1,68 +1,24 @@
-.signupLogo{
-    height: 100%;
-    
+.signupLogo {
+    min-zoom: 100%;
+    /* background: green; */
 }
 
-.registerHeader{
-    background-color:rgb(226, 240, 226);
+.registerHeader {
+    background-color: rgb(226, 240, 226);
 }
 
+.form-group span {
+    color: red;
+    display: none;
+}
 
-/* @media screen and (max-width:855px) {
-    .register__container{
-        padding-top:19rem;
-    }
-} */
+.form-group input:invalid[focused='true'] {
+    border: 1px solid red;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.form-group .userName input:invalid[focused="true"]~span,
+.form-group .email input:invalid[focused="true"]~span,
+.form-group .password input:invalid[focused="true"]~span,
+.form-group .confirmPassword input:invalid[focused="true"]~span {
+    display: block;
+}

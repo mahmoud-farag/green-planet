@@ -1,12 +1,12 @@
-.loginMain{
-    /* padding-top:7rem; */
-    background-color:rgb(226, 240, 226);
-    min-height: 90vh;
+.loginMain {
+    padding-top: 5rem !important;
+    padding-bottom: 2rem !important;
+    background-color: rgb(226, 240, 226);
 }
 
-
-
-*, ::before, ::after {
+*,
+ ::before,
+ ::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -19,14 +19,14 @@ body {
 .container {
     background-color: rgb(226, 240, 226);
     height: auto;
+    padding-top: 0;
 }
-
 
 .bloc-tabs {
     display: flex;
 }
-.tabs {
 
+.tabs {
     padding: 15px;
     text-align: center;
     width: 50%;
@@ -35,11 +35,12 @@ body {
     position: relative;
     outline: none;
 }
-.tabs:not(:last-child){
+
+.tabs:not(:last-child) {
     border-right: 1px solid rgba(0, 0, 0, 0.274);
 }
 
-.active-tabs  {
+.active-tabs {
     background: white;
 }
 
@@ -55,13 +56,33 @@ body {
 }
 
 
+/* _______form validation__________ */
+
+.form-group span {
+    color: red;
+    display: none;
+}
+
+.form-group input:invalid[focused='true'] {
+    border: 1px solid red;
+}
+
+.form-group .email input:invalid[focused="true"]~span,
+.form-group .password input:invalid[focused="true"]~span {
+    display: block;
+}
+
+
+/* _______form validation___________*/
+
 button {
     border: none;
-    
 }
+
 .content-tabs {
-    flex-grow : 1;
+    flex-grow: 1;
 }
+
 .content {
     background: white;
     padding: 20px;
@@ -69,26 +90,30 @@ button {
     height: 100%;
     display: none;
 }
+
 .content h2 {
     padding: 0px 0 5px 0px;
 }
+
 .content hr {
     width: 100px;
     height: 2px;
     background: #222;
     margin-bottom: 5px;
 }
+
 .content p {
     width: 100%;
     height: 100%;
 }
+
 .active-content {
     display: block;
 }
 
 @media screen and (max-width:855px) {
-    .loginMain{
-       height: 93vh;
-       padding-top: 15rem;
+    .loginMain {
+        /* height: 93vh; */
+        padding-top: 2rem;
     }
 }
