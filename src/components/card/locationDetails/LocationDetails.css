@@ -57,11 +57,34 @@
     /* background: red; */
     padding-bottom: 1rem;
     max-width: 95%;
+    min-height: auto !important;
     margin: auto;
 }
 
-progress[value] {
+
+/*______icons styling____*/
+
+.icons span {
+    margin-left: 1rem;
+}
+
+
+/*______icons styling____*/
+
+progress::-moz-progress-bar {
+    background: #90c900;
+}
+
+progress::-webkit-progress-value {
+    background: #90c900;
+}
+
+progress {
     color: #90c900;
+    width: 100%;
+}
+
+progress[value] {
     height: 1rem;
     border-radius: 1rem;
 }
@@ -111,6 +134,38 @@ section.payment__container p:last-child {
 }
 
 
+/*_______form styling__________*/
+
+input {
+    text-align: center;
+}
+
+span.error {
+    color: red;
+    display: none;
+    text-align: center !important;
+}
+
+span.show {
+    color: red;
+    display: block;
+    text-align: center !important;
+    margin-bottom: 1rem;
+}
+
+input[focused='true']:invalid~span {
+    display: block;
+}
+
+from select {
+    width: 100% !important;
+    text-align: center;
+}
+
+
+/*_______form styling__________*/
+
+
 /* display: inline-block; */
 
 section.payment__container button {
@@ -127,6 +182,14 @@ section.payment__container button {
 }
 
 @media screen and (max-width:855px) {
+    .mainAdd {
+        text-align: end;
+        background: #fff !important;
+    }
+    .mainAdd h4 {
+        font-size: 1rem;
+        font-weight: bold;
+    }
     .payment_parent_container {
         max-width: 95%;
     }

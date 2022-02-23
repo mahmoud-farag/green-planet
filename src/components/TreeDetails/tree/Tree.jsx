@@ -5,7 +5,7 @@ import './Tree.css'
   return (
     <div className='tree_container'>
 
-        <div className='col-xl-6 col-lg-6 col-md-6 col-sm-12'>
+        <div className='left_section col-xl-6 col-lg-6 col-md-6 col-sm-12'>
 
             <img className='img-fluid' src={process.env.PUBLIC_URL+`${props.treeImage}`} alt="" />
 
@@ -13,9 +13,9 @@ import './Tree.css'
 
         </div> 
 
-        <div className='col-xl-6 col-lg-6 col-md-6 col-sm-12'>
+        <div className=' right_section text-end col-xl-6 col-lg-6 col-md-6 col-sm-12'>
 
-            <div className="w-75">
+            <div className="">
                 <d className="tree-info">
                     <h2>{props.treeName}</h2>
                     <h3 className='text-success'>﷼ {props.treePrice} </h3>
@@ -23,11 +23,11 @@ import './Tree.css'
 
                 <div className="line m-auto mt-3"></div>
 
-                <h3 className='mt-3'>Description:</h3>
+                <h3 className='mt-3'>:معلومات عامة</h3>
 
                 <div className="desc bg-light rounded mt-5 p-2">
-                    <h4>Disclaimer</h4>
-                    <p>The Trees That We Deliever & Plant Will not look like the Photo. It is only meant to show how it would look like when fully grown.</p>
+                    <h4>تنويه</h4>
+                    <p>تم إختيار الأشجار لتناسب المواقع التي قمنا بتحديدها، والصور المعروضة توضح بشكل تقريبي شكل الشجرة حينما تكبر ولا تعبر عن شكلها وقت الزراعة. نباتك غير مسؤلة عن موت الأشجار وتلفها</p>
                 </div>
             </div>
 

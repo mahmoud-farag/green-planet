@@ -1,28 +1,35 @@
-div.contactUs__conatiner{
+div.contactUs__conatiner {
     background: #F1F6F8;
     height: 100vh;
-    padding-bottom:2rem;
+    padding-bottom: 2rem;
 }
-section.contacts div.title{
-    padding-top:6rem;
+
+section.contacts div.title {
+    padding-top: 6rem;
     text-align: end;
 }
-div.contacts__body{
+
+div.contacts__body {
     display: flex;
+    justify-content: space-between;
 }
-div.contactUs__conatiner section.contacts{
-    width: 70%;
-    margin:auto;
+
+div.contactUs__conatiner section.contacts {
+    max-width: 80%;
+    margin: auto;
 }
+
 div.contacts__body__part1 {
-    margin-right:2rem; 
+    margin-right: 2rem;
 }
-div.contacts__body__part1 h5{
+
+div.contacts__body__part1 h5 {
     color: #B5B5B5;
 }
+
 div.contacts__body__part1 p,
-div.contacts__body__part1 h5{
-   text-align:end;
+div.contacts__body__part1 h5 {
+    text-align: end;
     /* background: red; */
 }
 
@@ -30,83 +37,79 @@ div.form__container {
     background: #fff;
     margin-left: 1rem;
     border-radius: .6rem;
-    padding:1rem;
+    padding: 1rem;
     height: 35rem;
 }
-div.form__container div.form_title{
-    margin-top:2rem;
-    text-align:center;
+
+div.form__container div.form_title {
+    margin-top: 2rem;
+    text-align: center;
 }
-div.form__container  form  textarea,
-div.form__container  form input{
-    width: 90%;
-    margin:auto;
+
+div.form__container form {
+    max-width: 100% !important;
+}
+
+div.form__container form textarea,
+div.form__container form input {
+    max-width: 100% !important;
+    margin: auto;
     border-radius: .7rem;
-    margin-top:2rem;
+    margin-top: 2rem;
     direction: rtl;
-    padding:.4rem;
-    border:2px solid #F1F6F8;
-    color:#999;
-   
+    padding: .4rem;
+    border: 2px solid #F1F6F8;
+    color: #999;
 }
 
-
-div.form__container  form  button{
-    padding:.4rem 2rem;
-   margin-top:3rem;
-    width:90%;
-    border-radius:1rem;
-    color:#fff;
+div.form__container form button {
+    padding: .4rem 2rem;
+    margin-top: 3rem;
+    width: 90%;
+    border-radius: 1rem;
+    color: #fff;
     background: #46C9F3;
 }
-div.form__container  form  button:hover{
-    background: #42b4da;
 
+div.form__container form button:hover {
+    background: #42b4da;
 }
+
+
 /* mobile screens styling */
+
 @media screen and (max-width:855px) {
-    div.contactUs__conatiner{
-      
+    div.contactUs__conatiner {
         height: auto;
     }
-  div.contacts__body{
-      display:flex;
-      flex-direction: column;
-  }   
-  div.contacts__body__part1{
-      padding-top:1rem;
-      padding-bottom:2rem;
-  }
-  div.contactUs__conatiner section.contacts{
-      width:90%
-  }
-  div.form__container{
-     margin-right: 1rem;
-  }
-  div.form__container  form  textarea,
-  div.form__container  form  button,
-  div.form__container  form input{
-    width:100%
+    div.contacts__body {
+        display: flex;
+        flex-direction: column;
+    }
+    div.contacts__body__part1 {
+        padding-top: 1rem;
+        margin-right: 0;
+        padding-bottom: 2rem;
+    }
+    div.contactUs__conatiner section.contacts {
+        min-width: 95%
+    }
+    div.form__container {
+        margin-right: 1rem;
+        max-width: 100% !important;
+    }
+    div.form__container form {
+        padding: 0;
+        margin: 0;
+        min-width: 100% !important;
+    }
+    div.form__container form textarea,
+    div.form__container form button,
+    div.form__container form input {
+        min-width: 100% !important;
+    }
+    div.form__container form textarea:focus,
+    div.form__container form input:focus {
+        border: 1px solid #000
+    }
 }
-div.form__container  form  textarea:focus,
-div.form__container  form input:focus{
-    border:1px solid #000
-}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

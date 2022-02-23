@@ -1,17 +1,27 @@
-
 *,
 *::after,
-*before{
-    padding:0;
-    margin:0;
-    box-sizing: border-box  ;
-}
-.App{
-    
-    
-overflow-x: hidden;
+*before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.container{
-    padding-top:6rem;
+.App {
+    overflow-x: hidden;
+}
+
+.container {
+    padding-top: 6rem;
+}
+
+progress::-moz-progress-bar {
+    background: green;
+}
+
+progress::-webkit-progress-value {
+    background: blue;
+}
+
+progress {
+    color: green;
 }

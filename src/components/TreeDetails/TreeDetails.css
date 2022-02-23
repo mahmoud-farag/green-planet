@@ -1,20 +1,31 @@
-.line{
-
-    border: 1px solid lightgray;
-    
+.custom__container {
+    max-width: 95%;
+    margin: auto;
+    margin-top: 5rem;
 }
 
-.small-img{
+.section {
+    max-width: 100%;
+    margin: auto;
+}
 
+div.loc_title {
+    border-top: 1px solid #000;
+    padding-top: .3rem;
+}
+
+.line {
+    border: 1px solid lightgray;
+}
+
+.small-img {
     cursor: pointer;
 }
 
-.small-img:hover{
-
+.small-img:hover {
     border: 1px solid rgb(76, 240, 240);
 }
 
-.location-btn:hover{
-
+.location-btn:hover {
     color: white !important;
 }

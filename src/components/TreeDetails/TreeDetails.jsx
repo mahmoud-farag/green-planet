@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import Tree from './tree/Tree';
 import './TreeDetails.css';
 import '../home/Home.css'
+
 import {Buffer} from 'buffer'
 
 function TreeDetails(){
@@ -32,9 +33,9 @@ function TreeDetails(){
 
     return(
 
-        <div>
+        <div className='custom__container'>
             
-            <div className="container w-75 bg-light">
+            <div className="section ">
                  
                    {(treeId===1)&&<Tree treeName='شجرة البونسيانا' treePrice='55' treeImage='/imgs/bonsiana.jpeg'/>} 
                    {(treeId===2)&&<Tree treeName='شجرة النيم' treePrice='55' treeImage='/imgs/Neem.jpeg'/>} 
@@ -44,17 +45,9 @@ function TreeDetails(){
 
             </div>
 
-            {/* <div className="container w-75 bg-light mt-5">
-                <div className="row">
-                    <div className='col-xl-12 col-lg-12 col-md-12 col-sm-12'>
-                        <div className='line'></div>
-                    </div>
-                </div>
-            </div> */}
-
-            <div className="container w-75 mt-3 bg-light">
+            <div className=" section loc_title  mt-3 ">
                 <div>
-                    <h3>Locations where this tree can be planted in:</h3>
+                    <h3 className='  text-end'> : المواقع المناسبة لتلك الشجرة</h3>
                 </div>
             </div>
         <section className="meddille--section">
@@ -79,8 +72,8 @@ function TreeDetails(){
                     <p>{location.title}</p>
                     <p><span>{location.treePrice} ريال</span> / شجرة</p>
                   </div>
-                  <button><Link style={{ textDecoration: 'none', color:'#fff'}} to={`/location/${location._id}`}>ازرع شجرة</Link></button>
-                </div> 
+                  <Link className='btn' to={`/location/${location._id}`}>ازرع شجرة</Link>          
+                 </div> 
                 // end card
                ))
                :
@@ -89,30 +82,30 @@ function TreeDetails(){
             </div>
          </section>     
 
-            <div className=' d-flex justify-content-center mt-3 m-auto w-25'>
+            {/* <div className=' d-flex justify-content-center mt-3 m-auto w-25'>
                 <button className=' location-btn text-info p-3 btn btn-outline-info rounded-pill'>More Locations</button>
-            </div>
+            </div> */}
 
-            <section className='questions-form mt-5'>
+            <section className='  questions-form mt-5'>
 
-                <div className="container w-75">
+                <div className=" section mb-4 ">
 
                     <div className="row">
 
                         <div className='col-md-12 col-sm-12 col-lg-12 col-xl-12'>
 
-                            <div className='bg-light form-group'>
-                                <h6 className='text-center'>Have a questions?</h6>
-                                <p className='text-center mt-4'>We will get back to you as soon as possible to help you make a lasting impact</p>
+                            <div className='bg-light p-4 form-group'>
+                                <h6 className='text-center'>لديك سؤال؟</h6>
+                                <p className='text-center mt-4'>سنقوم بالإجابة على اسئلتكم في أسرع وقت ممكن</p>
 
-                                <input placeholder='Your name' className='m-auto mt-3 w-75 form-control' type="text" />
+                                <input placeholder='الاسم ' className='m-auto  text-end mt-3  form-control' type="text" />
 
-                                <input placeholder='Your Email' className='m-auto mt-3 w-75 form-control' type="email" name="" id="" />
+                                <input placeholder='البريد الالكتروني' className='m-auto  text-end mt-3  form-control' type="email" name="" id="" />
 
-                                <textarea placeholder='Your Message' className='m-auto w-75 mt-3 form-control'></textarea>
+                                <textarea placeholder='محتوى الرسالة' className='m-auto text-end mt-3 form-control'></textarea>
 
                                 <div className='m-auto mt-3 w-25 d-flex justify-content-center'>
-                                    <button className='btn btn-info text-light fw-bold px-5 rounded-pill'>Send</button>
+                                    <button className='btn btn-info text-light fw-bold px-5 rounded-pill'>ارسال </button>
                                 </div>
 
                                 

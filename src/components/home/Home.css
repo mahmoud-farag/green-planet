@@ -1,114 +1,128 @@
 .home--container {
- /* background: red; */
+    /* background: red; */
     position: relative;
     min-height: 100vh;
     /* padding-bottom: 10rem; */
 }
-.home--container section.top--section{
+
+.home--container section.top--section {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 40rem;
-} 
-section.top--section img.trees{
-   
-    position: absolute; 
-    top:0; 
-    left:0;  
+}
+
+section.top--section img.trees {
+    position: absolute;
+    top: 0;
+    left: 0;
     /* z-index: -10; */
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     object-position: center;
 }
-section.top--section div.title{
-text-align: center;
-  position: absolute;
-  top:20%;
-  width:100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 4rem;
+
+section.top--section div.title {
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
 }
- 
-section.top--section div.top--section__items{
+
+section.top--section div.top--section__items {
     /* background: chartreuse; */
-    top:12rem;
-    position:absolute;
-    top:40%;
-    width:100%;
+    top: 12rem;
+    position: absolute;
+    top: 40%;
+    width: 100%;
     display: felx;
-    
     justify-content: center;
     align-items: center;
 }
 
-div.top--section__items ul{
+div.top--section__items ul {
     display: flex;
     list-style: none;
 }
-div.top--section__items ul li{
+
+div.top--section__items ul li {
     margin-right: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-div.top--section__items ul li p{
+
+div.top--section__items ul li p {
     direction: rtl;
     text-align-last: center;
 }
-section.top--section  button{
+
+section.top--section a.btn {
     position: absolute;
-    bottom:5rem;
-    left:45%;
+    bottom: 5rem;
+    left: 45%;
     background: #46C9F3;
-    color:#fff;
+    color: #fff;
     cursor: pointer;
     text-decoration: none;
     padding: .3rem .7rem;
     border-radius: 1rem;
     z-index: 1000;
-    padding:.7rem 3rem;
+    padding: .7rem 3rem;
 }
 
-section.top--section  button:hover{
+button a.btn {
+    text-decoration: none;
+    color: #fff !important;
+}
+
+section.top--section a.btn:hover {
     background: #42b4da;
 }
 
+
 /*  start meddile section style */
+
 .meddille--section {
     /* background: yellow; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-bottom:1rem;
-
+    padding-bottom: 1rem;
 }
+
 .meddille--section div.title {
-    padding:1rem;
+    padding: 1rem;
     text-align: center;
 }
-.meddille--section div.title h1{
+
+.meddille--section div.title h1 {
     direction: rtl;
 }
-.meddille--section  div.cards--container{
+
+.meddille--section div.cards--container {
     /* background: red; */
-    padding:1rem;
+    padding: 1rem;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-   align-items: center;
+    align-items: center;
 }
-div.cards--container div.card{
-    position:relative;
-    margin:auto;
-    margin-top:1rem;
+
+div.cards--container div.card {
+    position: relative;
+    margin: auto;
+    margin-top: 1rem;
     width: 18rem;
     border-radius: .4rem;
     min-height: 20rem;
@@ -116,18 +130,21 @@ div.cards--container div.card{
     font-size: 1.3vw;
     transition: all .3s ease;
 }
-div.cards--container div.card:hover{
-  box-shadow: 10px 10px 14px 0px rgba(0,0,0,0.23);
+
+div.cards--container div.card:hover {
+    box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.23);
 }
 
-div.card div.card--body h5{
+div.card div.card--body h5 {
     border-bottom: 2px solid #0f700f;
-    padding-bottom:.2rem;
+    padding-bottom: .2rem;
 }
-div.card div.card--body p{
+
+div.card div.card--body p {
     font-size: 1rem;
 }
-.meddille--section figure img{
+
+.meddille--section figure img {
     /* position:absolute;
     top:0;
     left:0;  */
@@ -136,105 +153,84 @@ div.card div.card--body p{
     object-fit: fill;
     transition: all .2s ease;
 }
-.meddille--section figure:hover img{
-    transform: scale(1.04);}
-div.cards--container div.card div.card--body{
-    padding:.5rem;
-    padding-top:0;
+
+.meddille--section figure:hover img {
+    transform: scale(1.04);
+}
+
+div.cards--container div.card div.card--body {
+    padding: .5rem;
+    padding-top: 0;
     direction: rtl;
 }
-div.cards--container div.card  button{
-    margin-top:.4rem;
-    transition: all .2s ease ;
+
+div.cards--container div.card a.btn {
+    margin-top: .4rem;
+    transition: all .2s ease;
     background: #46C9F3;
-    color:#fff;
-    padding:1rem;
+    color: #fff;
+    padding: 1rem;
     font-weight: bold;
     font-size: 1.1vw;
 }
 
-div.cards--container div.card  button:hover{
-    color:#fff;
-    background: green;
+div.cards--container div.card a.btn:hover {
+    color: #fff;
+    background: #90C900;
 }
 
 
 /*  end meddile section style */
 
 
-
-
-
 /* mobile screens   */
 
 @media screen and (max-width:855px) {
-    .home--container section.top--section{
+    .home--container section.top--section {
         height: 65rem;
     }
-
-    section.top--section div.title{
-        top:5%;
-
+    section.top--section div.title {
+        top: 5%;
     }
-    section.top--section div.top--section__items{
-        top:15%;
-        
+    section.top--section div.top--section__items {
+        top: 15%;
     }
-    div.top--section__items ul{
-       display: block;
+    div.top--section__items ul {
+        display: block;
     }
-    
-    div.top--section__items ul li:first-child{
+    div.top--section__items ul li:first-child {
         margin-top: 2rem;
     }
-
-
-    section.top--section button{
-       left:30%;
+    section.top--section a.btn {
+        left: 22%;
     }
-    section.top--section div.title h1{
+    section.top--section div.title h1 {
         font-size: 1.4rem;
         font-weight: bold;
     }
-    section.top--section div.title{
-        top:7%;
+    section.top--section div.title {
+        top: 7%;
     }
-
     /* card styleing */
-    div.cards--container div.card{
+    div.cards--container div.card {
         position: relative;
         width: 20rem;
-        height:25rem;
+        height: 25rem;
         font-size: 4vw;
     }
-    div.cards--container div.card h5{
+    div.cards--container div.card h5 {
         font-size: 6vw;
         font-weight: bold;
     }
-    div.cards--container div.card  button{
+    div.cards--container div.card a.btn {
         position: absolute;
-        bottom:2%;
-        left:0;
-        width:90%;
-        margin:1rem;
+        bottom: 2%;
+        left: 0;
+        width: 90%;
+        margin: 1rem;
         font-size: 4vw;
-      border-radius:2rem ;
-      color:#fff;
-      background: green;
+        border-radius: 2rem;
+        color: #fff;
+        background: #46C9F3;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

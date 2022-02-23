@@ -7,10 +7,12 @@ import {Buffer} from 'buffer';
 
 export default function Home() {
   const [locations, setLocations] = useState([]);
-   const [error, setError] =useState('')
+   const [error, setError] =useState('');
+
    const  getLocations = async()=>{
       try {
-       const {data} = await axios.get(`https://green-planet12.herokuapp.com/api/v1/location`);
+       const {data} = await axios.get(`https://green-planet12.herokuapp.com/api/v1/location`)
+  
         // const {data}= await axios.get('http://localhost:4000/api/v1/location');
         if(data){
           console.log(data.locations)
@@ -68,13 +70,13 @@ export default function Home() {
            </ul>
          </div>
          <div className='btn'>
-          <button ><Link style={{ textDecoration: 'none', color:'#fff'}} to='#meddile'>ازرع شجرة</Link></button>
+           <a  className='btn'  href='#1'>ازرع شجرة</a>
          </div>
          
      </section>
     {/*  end top--section */}
     {/*  start meddile--section */}
-    <section className="meddille--section" id='meddile'>
+    <section className="meddille--section" id='1'>
             <div className='title'>
               <h1>أين تريد زراعة الأشجار؟</h1>
               <p>جميع المواقع تم اختيارها لجاهزيتها للزراعة ووجود شبكة ري وتربة صالحة</p>
@@ -101,7 +103,7 @@ export default function Home() {
                     <p>{location.title}</p>
                     <p><span>{location.treePrice} ريال</span> / شجرة</p>
                   </div>
-                  <button><Link  style={{ textDecoration: 'none', color:'#fff'}} to={`/location/${location._id}`}>ازرع شجرة</Link></button>
+                  <Link className='btn' to={`/location/${location._id}`}>ازرع شجرة</Link>
                 </div> 
                 // end card
                ))

@@ -1,6 +1,7 @@
 import React, {useState,useEffect}from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './LocationDetails.css';
+import '../../../App.css'
 import Payment from '../../payment/Payment.jsx'
 import axios from 'axios';
 import {Buffer} from 'buffer';
@@ -8,22 +9,30 @@ import {Buffer} from 'buffer';
 function LocationDetails(){
        const params= useParams();
        const [showPayment, setShowPayment]= useState(false); 
-       const [treeName, setTreeName]= useState('مصر');
-       const [treeCount, setTreeCount]= useState(1);
+       const [treeName, setTreeName]= useState('');
+       const [treeCount, setTreeCount]= useState(0);
        const [totalPrices, setTotalPrices]=useState(0);
        const [location, setLocation] = useState({});  
-    //    const [title, setTitle]=useState('')
+       const [inputFocused, setInputFocused]=useState(false)
+       const [error, setError]=useState(false)
+
        const treesArabicNames=['البونسيانا','النيم','فيكس لسان العصفور','اللبخ','أكاسيا جلوكا'];
        const treesPrices=[55,45,50,45,45];
      
         const btnHandling=(event)=>{
-            setShowPayment(true)
                
             if (treeName=== treesArabicNames[0])  setTotalPrices(treeCount * treesPrices[0])
             if (treeName=== treesArabicNames[1])  setTotalPrices(treeCount * treesPrices[1])
             if (treeName=== treesArabicNames[2])  setTotalPrices(treeCount * treesPrices[2])
             if (treeName=== treesArabicNames[3])  setTotalPrices(treeCount * treesPrices[3])
-            if (treeName=== treesArabicNames[4])  setTotalPrices(treeCount * treesPrices[4])                 
+            if (treeName=== treesArabicNames[4])  setTotalPrices(treeCount * treesPrices[4]) 
+            
+            if(treeCount && treeName) {
+                setShowPayment(true)
+
+            }else{
+              setError(true)
+            }
         }
 
           const getLocation= async()=>{
@@ -69,15 +78,18 @@ function LocationDetails(){
                                 <span className='fw-5 '>عدد الأشجار التي زُرعت</span>
                                 <span className='text-success mx-1'>{location.totalPlantedTrees} / {location.maxTrees}</span>
                             </div>
-                            <progress className='prog w-50' value={location.totalPlantedTrees} max={location.maxTrees} ></progress>
+                            <progress className='prog' value={location.totalPlantedTrees} max={location.maxTrees} ></progress>
                         </div>
 
                         <div className="icons mt-3">
-                            <img className='img-fluid' src={process.env.PUBLIC_URL+'/imgs/meter.svg'} alt="" />
-                   
-                            <span className='m-4 fw-bold'>7296097.82 m²</span>
-                            <img className='img-fluid' src={process.env.PUBLIC_URL+'/imgs/tree.svg'} alt="" />
-                            <span className='m-4 fw-bold'>{location.totalPlantedTrees} الأشجار التي زُرعت</span>
+                           <div className="icon1">
+                                <img className='img-fluid' src={process.env.PUBLIC_URL+'/imgs/meter.svg'} alt="" />
+                                <span className=' fw-bold'>7296097.82 m²</span>
+                           </div>
+                            <div className="icon2">
+                                <img className='img-fluid' src={process.env.PUBLIC_URL+'/imgs/tree.svg'} alt="" />
+                                <span className='fw-bold'>{location.totalPlantedTrees} : الأشجار التي زُرعت</span>
+                            </div>
                         </div>
 
                         <div className='m-auto  w-75'>
@@ -107,7 +119,7 @@ function LocationDetails(){
                                     <p className='text-dark'>البونسيانا</p>
                                     <p className='text-dark'>55﷼</p>
                                     
-                                    <button className='btn btn-info'><Link style={{ textDecoration: 'none', color:'#fff'}}  to='/tree/1'>تفاصيل</Link></button>
+                                    <button className='btn btn-info'><Link className='btn' to='/tree/1'>تفاصيل</Link></button>
                                 </div>
 
                             </div>
@@ -126,7 +138,7 @@ function LocationDetails(){
                                     <p className='text-dark'>شجرة النيم</p>
                                     <p className='text-dark'>45﷼</p>
                                     
-                                    <button className='btn btn-info'><Link style={{ textDecoration: 'none', color:'#fff'}} to='/tree/2'>تفاصيل</Link> </button>
+                                    <button className='btn btn-info'><Link className='btn' to='/tree/2'>تفاصيل</Link> </button>
                                 </div>
 
                             </div>
@@ -145,7 +157,7 @@ function LocationDetails(){
                                     <p className='text-dark'>فيكس لسان العصفور</p>
                                     <p className='text-dark'>50﷼</p>
                                     
-                                    <button className='btn btn-info'><Link style={{ textDecoration: 'none', color:'#fff'}}  to='/tree/3'>تفاصيل</Link></button>
+                                    <button className='btn btn-info'><Link className='btn'  to='/tree/3'>تفاصيل</Link></button>
                                 </div>
 
                             </div>
@@ -164,7 +176,7 @@ function LocationDetails(){
                                     <p className='text-dark'>شجرة اللبخ</p>
                                     <p className='text-dark'>45﷼</p>
                                     
-                                    <button className='btn btn-info'><Link style={{ textDecoration: 'none', color:'#fff'}} to='/tree/4'>تفاصيل</Link></button>
+                                    <button className='btn btn-info'><Link className='btn' to='/tree/4'>تفاصيل</Link></button>
                                 </div>
 
                             </div>
@@ -182,7 +194,7 @@ function LocationDetails(){
                                     <p className='text-dark'>أكاسيا جلوكا</p>
                                     <p className='text-dark'>45﷼</p>
                 
-                                    <button className='btn btn-info'><Link style={{ textDecoration: 'none', color:'#fff'}}  to='/tree/5'>تفاصيل</Link></button>
+                                    <button className='btn btn-info'><Link className='btn'  to='/tree/5'>تفاصيل</Link></button>
                                 </div>
 
                             </div>
@@ -199,27 +211,25 @@ function LocationDetails(){
 
                 <h3 className='text-center'>كم عدد الأشجار التي تريد زراعتها؟</h3>
                 <div className="line mt-1"></div>
-                <div className='mt-1 d-flex justify-content-center'>
+                <div className='mt-1'>
                      <input 
                           className='form-control w-100 m-auto'
                           placeholder='كم عدد الأشجار التي تريد زراعتها؟' 
                           type="number" 
                           name="" 
+                          required
+                          onBlur={()=>setInputFocused(true)}
+                          focused={inputFocused.toString()}
                           onChange={event=> setTreeCount(+event.target.value)}
                           id="" />
+                          <span className='error'>لابد من ادخال عدد الاشجار</span>
 
                 </div>
-                {/* <div className="form-group">
-                    <input className='form-control w-100 m-auto' placeholder='Tree Name' type="text" name="" id="" />
-                </div> */}
-
-
                 <div className='mt-3'>
 
-                    {/* <label className='mx-2' htmlFor="trees">اختر الشجرة</label> */}
 
                    <form>
-                   <select name='trees' onChange={event=>setTreeName(event.target.value)} value={treeName}>
+                   <select style={{width:'100%', textAlign:'center'}} name='trees' onChange={event=>setTreeName(event.target.value)} value={treeName}>
                         <option value="">اختر الشجرة</option>
                         <option value={treesArabicNames[0]} >البونسيانا</option>
                         <option value={treesArabicNames[1]} > النيم</option>
@@ -245,12 +255,12 @@ function LocationDetails(){
             </div>
            {
            
-           showPayment? (
+           showPayment&& treeName && treeCount>0? (
              <div className='payment_parent_container'>
                 <section className="payment__container">
                     <div className="summary">
                         <h5 className='title' >الشجرة: <span>{treeName}</span></h5>
-                        <p>الموقع:  <span> جدة</span></p>
+                        <p>الموقع:  <span> {location.title}</span></p>
                         <p>الكمية:  <span> {treeCount} شجرة</span></p>
                         <p>المجموع الكلي: <span> {totalPrices} ريال</span></p>
                     </div>
@@ -259,7 +269,7 @@ function LocationDetails(){
                 <p> أسم الشجرة سيكون ظاهر لجميع مستخدمي خريطة الأشجار، الرجاء التأكد من عدم إفشاء معلومات خاصة، أو إستخدام الاسم لتسبب ضرر بكلمات أو عبارات عنصرية أو مؤذية </p>
                 <p> ستتم زراعة الأشجار فور تحقيق الهدف الخاص بموقع الزراعة أو بعد مرور فترة من الزمن. سيتم إشعاركم فور زراعة الشجرة وسيتم إرسال شهادة خاصة ورابط لموقع الشجرة. إضافة إلى ذلك، لن تتم الزراعة في فصل الصيف (مارس - أغسطس) وذلك لضمان نجاح عملية الزراعة </p>
              </div>
-            ): ''
+            ): <span className={error? 'show':'error'} > لابد من ادخال عدد الاشجار واسم الشجرة</span>
             
             } 
             

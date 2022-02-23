@@ -1,36 +1,36 @@
-span.title{
-    color:#FFFAFA;
+span.title {
+    color: #FFFAFA;
     font-size: 1.2rem;
     font-weight: bold;
 }
-.container-fluid{
 
-    background: #171717;
+.container-fluid {
+    background: #90C900;
     /* color:#fff; */
-    padding-top:1rem;
+    padding-top: 1rem;
 }
-.socialIcons i{
+
+.socialIcons i {
     padding: 5px;
     cursor: pointer;
-    
 }
 
-.logo span{
+.logo span {
     padding: 5px;
 }
 
-.links a{
+.links a {
     text-decoration: none;
-    color:#FFFAFA;
+    color: #FFFAFA;
     font-weight: bold;
 }
 
-.links a:hover{
-    color:#FFFAFA;
+.links a:hover {
+    color: #FFFAFA;
 }
 
-div.address p{
-    color:#FFFAFA;
+div.address p {
+    color: #FFFAFA;
 }
 
 
@@ -40,46 +40,3 @@ div.address p{
         color:red
     }
 } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

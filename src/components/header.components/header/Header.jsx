@@ -41,7 +41,7 @@ function Header(){
             </Nav>
 
             <div className='m-auto '>
-              <button className='rounded-pill text-light fw-bold  btn btn-info p-2'>ازرع شجرة </button>
+              <Link className='btn' to='/'>ازرع شجرة</Link> 
 
               <button className='loginBtn rounded-pill text-info fw-bold  btn btn-outline-info m-2 p-2'><Link className='a' to='/login'>تسجيل دخول</Link></button>
               <button className='loginBtn rounded-pill text-info fw-bold  btn btn-outline-info m-2 p-2'><Link className='a' to='/location'>ادمن </Link></button>

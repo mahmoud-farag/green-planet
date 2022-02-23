@@ -1,5 +1,9 @@
 div.tree_container {
     display: flex;
-    /* background: red; */
-    /* flex-direction:; */
+}
+
+@media screen and (max-width:855px) {
+    div.tree_container {
+        flex-direction: column;
+    }
 }
