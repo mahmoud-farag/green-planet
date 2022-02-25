@@ -54,7 +54,7 @@
 }
 
 .top_section {
-    /* background: red; */
+    padding-top: 5rem;
     padding-bottom: 1rem;
     max-width: 95%;
     min-height: auto !important;
@@ -136,8 +136,8 @@ section.payment__container p:last-child {
 
 /*_______form styling__________*/
 
-input {
-    text-align: center;
+.input {
+    text-align: end;
 }
 
 span.error {
@@ -159,7 +159,7 @@ input[focused='true']:invalid~span {
 
 from select {
     width: 100% !important;
-    text-align: center;
+    text-align: end;
 }
 
 
@@ -200,6 +200,12 @@ section.payment__container button {
         font-size: 1rem;
     }
 }
+
+
+/*_________on hovering screen only_________*/
+
+
+/*_________on hovering screen only_________*/
 
 
 /* end payment section styling */

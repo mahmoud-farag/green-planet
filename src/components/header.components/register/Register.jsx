@@ -51,14 +51,16 @@ function Register(){
                // alert(JSON.stringify(data))
            
              } catch (error) {
+              setSubmitting(false)
               alert(JSON.stringify(error))
             }
          }    
           // clear inputs field
-          setName('');
-          setEmail('');
-          setPassword('');
-          setConfirmPassword('');
+          event.target.reset()
+          // setName('');
+          // setEmail('');
+          // setPassword('');
+          // setConfirmPassword('');
     
     }
   

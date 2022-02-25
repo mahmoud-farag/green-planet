@@ -13,15 +13,3 @@
 .container {
     padding-top: 6rem;
 }
-
-progress::-moz-progress-bar {
-    background: green;
-}
-
-progress::-webkit-progress-value {
-    background: blue;
-}
-
-progress {
-    color: green;
-}

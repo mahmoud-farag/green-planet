@@ -127,7 +127,7 @@ div.cards--container div.card {
     border-radius: .4rem;
     min-height: 20rem;
     overflow: hidden;
-    font-size: 1.3vw;
+    font-size: 1.3rem;
     transition: all .3s ease;
 }
 
@@ -171,7 +171,7 @@ div.cards--container div.card a.btn {
     color: #fff;
     padding: 1rem;
     font-weight: bold;
-    font-size: 1.1vw;
+    /* font-size: .4rem; */
 }
 
 div.cards--container div.card a.btn:hover {
@@ -202,7 +202,7 @@ div.cards--container div.card a.btn:hover {
         margin-top: 2rem;
     }
     section.top--section a.btn {
-        left: 22%;
+        left: 30%
     }
     section.top--section div.title h1 {
         font-size: 1.4rem;
@@ -216,10 +216,10 @@ div.cards--container div.card a.btn:hover {
         position: relative;
         width: 20rem;
         height: 25rem;
-        font-size: 4vw;
+        font-size: 2rem;
     }
     div.cards--container div.card h5 {
-        font-size: 6vw;
+        font-size: 1rem;
         font-weight: bold;
     }
     div.cards--container div.card a.btn {
@@ -228,7 +228,7 @@ div.cards--container div.card a.btn:hover {
         left: 0;
         width: 90%;
         margin: 1rem;
-        font-size: 4vw;
+        font-size: 1rem;
         border-radius: 2rem;
         color: #fff;
         background: #46C9F3;

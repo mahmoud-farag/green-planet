@@ -16,8 +16,8 @@ export default function Home() {
         // const {data}= await axios.get('http://localhost:4000/api/v1/location');
         if(data){
           console.log(data.locations)
-         setLocations(data.locations)
-          //  console.log(Buffer.from(data.locations[0].img.binaryImg.data, 'binary').toString('base64'))
+          setLocations(data.locations)
+         
         }
       } catch (error) {
          setError(error.message)
@@ -93,9 +93,9 @@ export default function Home() {
                       <Link to={`/location/${location._id}`}>
                         <img 
                           src={`data:image/jpeg;base64,
-                          ${Buffer.from(location.img.binaryImg.data,'binary').toString('base64')}`}>
+                          ${Buffer.from(location.img.binaryImg.data,'binary').toString('base64')}`} />
                           
-                          </img>
+                         
                       </Link>
                     </figure>
                   <div className="card--body">

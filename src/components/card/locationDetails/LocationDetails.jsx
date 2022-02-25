@@ -39,12 +39,12 @@ function LocationDetails(){
 
         try{
             const {data} = await axios.get(`https://green-planet12.herokuapp.com/api/v1/location/${params.id}`);
-
         //   const {data} = await axios.get(`http://localhost:4000/api/v1/location/${params.id}`);
          
           if(data){
-            console.log(data)
+            // console.log(data)
             setLocation(data.location)   
+            console.log(location)
            
           }else{
               alert('no data to display')
@@ -62,11 +62,15 @@ function LocationDetails(){
 
         <div>
 
-            {location? ( <div className="container top_section">
+            {location? ( <div className=" top_section">
                 <div className="row ">
 
                     <div className='mainAdd col-md-12 col-sm-12 col-lg-6 col-xl-6'>
-                         <img className='img-fluid'  src={process.env.PUBLIC_URL+'/imgs/2.jpeg'} alt="" /> 
+                         {/* <img className='img-fluid'  src={process.env.PUBLIC_URL+'/imgs/2.jpeg'} alt="" />  */}
+                         <img   className='img-fluid'
+                          src={location.img? `data:image/jpeg;base64,
+                          ${Buffer.from(location.img.binaryImg.data,'binary').toString('base64')}`:process.env.PUBLIC_URL+'/imgs/2.jpeg'} /> 
+                          
                     </div>
 
                     <div className='mainAdd col-md-12 col-sm-12 col-lg-6 col-xl-6'>
@@ -93,7 +97,8 @@ function LocationDetails(){
                         </div>
 
                         <div className='m-auto  w-75'>
-                            <button className='mt-4 w-100 text-light btn btn-info'>MAP</button>
+                            <Link to='/map' className='btn mt-4 w-100 text-light btn btn-info'>الخريطة</Link>
+                            {/* <Link className='btn' to={`/location/${location._id}`}>ازرع شجرة</Link> */}
                         </div>
 
                         
@@ -213,7 +218,7 @@ function LocationDetails(){
                 <div className="line mt-1"></div>
                 <div className='mt-1'>
                      <input 
-                          className='form-control w-100 m-auto'
+                          className='input form-control w-100 m-auto'
                           placeholder='كم عدد الأشجار التي تريد زراعتها؟' 
                           type="number" 
                           name="" 
