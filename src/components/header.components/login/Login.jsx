@@ -42,8 +42,8 @@ function Login(){
 
                 const user = {email, password}
                 //  dispatch login action using RTK
-                dispatch(logIn(user))
-                navigate('/');
+                const isSuccessed=  await  dispatch(logIn(user))
+                isSuccessed && navigate('/');
            
               } catch (error) {
                 alert(JSON.stringify(error))

@@ -66,21 +66,12 @@ function Register(){
   
   return(
 
-    <div className='registerHeader vh-100 d-flex justify-content-center align-items-center'>
+    <div className='registerHeader vh-100 '>
 
-      <div className='registerContent bg-light w-75 h-75 rounded clo-md-6 clo-lg-6 col-xl-6 col-sm-6'>
-
-        <div className='container register__container'>
-          <div className='row'>
-
-            <div className='registerLogo clo-md-6 clo-lg-6 col-xl-6 col-sm-6'>
-              {/* <img className='signupLogo w-100'  alt="logo" /> */}
-            </div>
-              
-            <div className='clo-md-6 clo-lg-6 col-xl-6 col-sm-6'>
+        <div className='register__container'>
               <h3 className='mb-3  text-center '>انشئ حساب جديد</h3>
-              <div className='form-group'>
-                <div className='userName'>
+              <div className='form-group register'>
+                <div className='userName '>
                   <input 
                     className='form-control my-2'  
                     name='name'  
@@ -135,15 +126,14 @@ function Register(){
                   />
                   <span>الباسورد غير متطابق</span>
                 </div>
+                <button onClick={handleSubmitting} className='btn btn_register  btn-outline-success  mt-4'>{submitting? 'new User is Creating...':'Sign Up'}</button>
+
               </div>
               
-              <button onClick={handleSubmitting} className='btn btn-outline-success w-100 mt-4'>{submitting? 'new User is Creating...':'Sign Up'}</button>
-            </div>
 
-          </div>
         </div>
 
-      </div>
+
 
     </div>
 

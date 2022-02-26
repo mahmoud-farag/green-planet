@@ -26,8 +26,7 @@ export const Profile = () => {
     return (
     <div className='container_profile'>
       
-      
-      <i class="fa-solid fa-user"></i>      
+    
         <button  onClick={handleBtn}className='rounded-pill  fw-bold  btn btn-outline-info m-2 p-2'><a className='a' href='/'>تسجيل خروج</a></button>
     </div>
   )

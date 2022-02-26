@@ -4,14 +4,14 @@ import axios from 'axios';
 
 
 const initialValue=localStorage.getItem('user')? 
-                   JSON.parse(localStorage.getItem('user')):{user:null, isLoading:false};
+                   JSON.parse(localStorage.getItem('user')):{user:{email:'', password:''}, isLoading:false};
 
 
 const userSlice =  createSlice({
     name:'user',
     initialState:initialValue,
     reducers:{
-      loginSuccess: (state, action)=>{
+      loginSuccess: (state, action)=>{ 
         state.user= action.payload.user;
         state.isLoading= action.payload.isLoading
         localStorage.setItem('user', JSON.stringify(action.payload))
@@ -28,17 +28,17 @@ export const logIn = ({email, password})=>  async dispatch=>{
 
                try {
                 const user={email, password}
-                dispatch(loginSuccess({user:null, isLoading:true}));
+                dispatch(loginSuccess({user:{email:'', password:''}, isLoading:true}));
                 console.log(user)
                 const {data}= await axios.post('https://green-planet12.herokuapp.com/api/v1/user/login', user) 
                  console.log(data)
                 if(data){
                   dispatch(loginSuccess({user:user, isLoading:false}))
-                
-
+                  //   if successeded return true
+                  return true
                 } 
                } catch (error) {
-                 dispatch(loginSuccess({user:null, isLoading:false}))
+                 dispatch(loginSuccess({user:{email:'', password:''}, isLoading:false}))
                 console.log(error.response.data)
                 alert(JSON.stringify(error.response.data))
                }

@@ -9,7 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Header(){
    const userState = useSelector(state=>state.user);
-     if(userState)console.log(userState)
+  //  userState.user.email==='ali@gmail.com'? console.log('admin'): console.log('not admin')
+  console.log(userState)
   return(
 
     <div className='header__container'>
@@ -45,14 +46,14 @@ function Header(){
             <div className='m-auto '>
               <Link className='btn' to='/'>ازرع شجرة</Link> 
 
-              {userState.user!==null? 
-                 <button className='loginBtn rounded-pill text-info fw-bold  btn btn-outline-info m-2 p-2'><Link className='a' to='/profile'>      
+              {userState.user.email? 
+                 <button className='profile_icon rounded-pill text-info fw-bold  btn btn-outline-info m-2 p-2'><Link className='a' to='/profile'>      
                  <i class="fa-solid fa-user"></i></Link></button>
                  :
                  <button className='loginBtn rounded-pill text-info fw-bold  btn btn-outline-info m-2 p-2'><Link className='a' to='/login'>تسجيل دخول</Link></button>
  
-              }      
-              <button className='loginBtn rounded-pill text-info fw-bold  btn btn-outline-info m-2 p-2'><Link className='a' to='/location'>ادمن </Link></button>
+              }
+              {userState.user.email ==='ali@gmail.com'? <button className='loginBtn rounded-pill text-info fw-bold  btn btn-outline-info m-2 p-2'><Link className='a' to='/location'>ادمن </Link></button>:<></>}
 
             </div>
 
