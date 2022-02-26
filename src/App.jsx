@@ -11,9 +11,9 @@ import Questions from './components/header.components/qusetions/Questions';
 import Register from './components/header.components/register/Register';
 import Location from './components/card/Location/Location';
 import LocationDetails from './components/card/locationDetails/LocationDetails';
-import About from './components/header.components/about/About';
 import TreeDetails from './components/TreeDetails/TreeDetails.jsx';
 import { Error } from './components/error/Error';
+import { Profile } from './components/header.components/profile/Profile';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
          <Route path='/location' element={<Location/>}/>
          <Route path='/location/:id' element={<LocationDetails/>}/>
          <Route path='/tree/:id'  element={<TreeDetails/>} />
-         {/* <Route path='/error' element={<Error/>}/> */}
+         <Route path='/profile' element={<Profile/>}/>
        </Routes>       
       <Footer/>
     </div>

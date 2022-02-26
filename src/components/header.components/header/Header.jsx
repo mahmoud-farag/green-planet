@@ -4,10 +4,12 @@ import Contact from './../contact/Contact';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-;
+import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Header(){
-
+   const userState = useSelector(state=>state.user);
+     if(userState)console.log(userState)
   return(
 
     <div className='header__container'>
@@ -43,7 +45,13 @@ function Header(){
             <div className='m-auto '>
               <Link className='btn' to='/'>ازرع شجرة</Link> 
 
-              <button className='loginBtn rounded-pill text-info fw-bold  btn btn-outline-info m-2 p-2'><Link className='a' to='/login'>تسجيل دخول</Link></button>
+              {userState.user!==null? 
+                 <button className='loginBtn rounded-pill text-info fw-bold  btn btn-outline-info m-2 p-2'><Link className='a' to='/profile'>      
+                 <i class="fa-solid fa-user"></i></Link></button>
+                 :
+                 <button className='loginBtn rounded-pill text-info fw-bold  btn btn-outline-info m-2 p-2'><Link className='a' to='/login'>تسجيل دخول</Link></button>
+ 
+              }      
               <button className='loginBtn rounded-pill text-info fw-bold  btn btn-outline-info m-2 p-2'><Link className='a' to='/location'>ادمن </Link></button>
 
             </div>

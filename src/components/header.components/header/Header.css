@@ -32,7 +32,13 @@
     color: #fff;
     background: #42b4da;
 }
-
+.profile_icon,
+a{
+    border:none;
+}
+.fa-user{
+    font-size:1.4rem;
+}
 button .a {
     text-decoration: none;
     color: #000;

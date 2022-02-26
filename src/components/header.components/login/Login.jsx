@@ -5,45 +5,49 @@ import axios from 'axios';
 import {Link, useNavigate } from 'react-router-dom';
 import validator from 'validator'
 
-// import { Link } from 'react-router-dom';
-// import loginLogo from '../images/loginLogo.png';
+
+/*______REDUX___________*/
+import {useSelector, useDispatch} from 'react-redux';
+import {logIn } from '../../../reduxToolkit/features/user.js'
+/*______REDUX___________*/
+
 
 function Login(){
     const navigate = useNavigate();
     const [toggleState, setToggleState] = useState(1);
+
+    /*____FORM INPUTS STATES____*/
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState(''); 
     const [emailFocused, setEmailFocused] = useState(false);  
     const [passwordFocused, setPasswordFocused] = useState(false);  
-    const [login,setlogin] = useState(false)
-    const toggleTab = (index) => {
-    setToggleState(index);
+    /*____FORM INPUTS STATES____*/
 
-    };
+    /*____REDUX_____*/
+     const dispatch= useDispatch();
+     const userReducer = useSelector(state=>state.user);
+    /*____REDUX_____*/
+    // to change between email&password form and phoneNumber&password form
+    const toggleTab = (index) => {setToggleState(index)};
     const handleSubmitting = async (event)=>{
         // event.preventDefault();
+        
+        // form validation
         if(!validator.isEmail(email))
             { return alert('Enter valid email')}
         else if(password.length==0 || password.length <8)
             {return alert('enter valid passowrd and must be more than 8 ')}
         else{
             try {
+
                 const user = {email, password}
-                setlogin(true);
-                const {data}= await axios.post('https://green-planet12.herokuapp.com/api/v1/user/login', user) 
-                // const {data}= await axios.post('http://localhost:4000/api/v1/user/login',user)
-               // if user login successfully ... direct him to the home page
-                 if(data)navigate('/')
-                console.log(data)
-                //  clear inputs field
-               event.target.reset()
+                //  dispatch login action using RTK
+                dispatch(logIn(user))
+                navigate('/');
            
               } catch (error) {
-                   setlogin(false);
-                  console.log(error.response.data)
-                alert(JSON.stringify(error.response.data))
-              }
-             
+                alert(JSON.stringify(error))
+              }             
         }
              
        }
@@ -91,7 +95,7 @@ function Login(){
                                     />
                                     <span>كلمة المرور لابد ان تكون مكونه من 8-16 عنصر يحتوى على الاقل 1 حرف, 1رقم, 1 حرف خاص </span>
                                    </div>
-                                    <button onClick={handleSubmitting}  className='btn btn-outline-success w-100 mt-3'>{login? 'جاري تسجيل الدخول...':'تسجيل دخول'}</button>
+                                    <button onClick={handleSubmitting}  className='btn btn-outline-success w-100 mt-3'>{userReducer.isLoading? 'جاري تسجيل الدخول...':'تسجيل دخول'}</button>
                                     <div className='forgetPasswordLink mt-5 p-3 w-100'>
                                     <p className='text-end'><Link className='text-end' to="#">هل نسيت كلمة السر ?</Link></p>
                                         <h6 className='mt-4 text-end'>لا تمتلك حساب?</h6>
