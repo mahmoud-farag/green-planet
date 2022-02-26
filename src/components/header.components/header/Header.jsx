@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 function Header(){
    const userState = useSelector(state=>state.user);

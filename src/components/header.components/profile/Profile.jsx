@@ -3,7 +3,7 @@ import './Profile.css'
 import {useDispatch,} from 'react-redux';
 import { logout } from '../../../reduxToolkit/features/user';
 import {useNavigate} from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 
 

@@ -37,7 +37,7 @@ function Login(){
             { return alert('Enter valid email')}
         else if(password.length==0 || password.length <8)
             {return alert('enter valid passowrd and must be more than 8 ')}
-        else{
+        else{                                               
             try {
 
                 const user = {email, password}
